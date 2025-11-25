@@ -1,31 +1,41 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class CurrentTurn : MonoBehaviour
 {
-
-    TurnsList turnsListCS;
-    // Caracters list
     public List<GameObject> playersInGame = new List<GameObject>();
+    private List<UnitStats> stats = new List<UnitStats>();
+    private UnitStats currentUnit;
 
-    private void Start()
+    private float threshold = 1000f;
+
+    void Start()
     {
-        turnsListCS = GetComponent<TurnsList>();
-
-
-
+        foreach (var obj in playersInGame)
+            stats.Add(obj.GetComponent<UnitStats>());
     }
-    void randomelist(int count)
+
+    void Update()
     {
-        playersInGame = new List<GameObject>(playersInGame);
-        for (int i = 0; i < count; i++)
+        if (currentUnit != null) return;
+
+        foreach (UnitStats u in stats)
         {
-            GameObject temp = playersInGame[i];
-            int randomIndex = Random.Range(i, count);
-            playersInGame[i] = playersInGame[randomIndex];
-            playersInGame[randomIndex] = temp;
+            u.actionValue += u.speed * Time.deltaTime;
+
+            if (u.actionValue >= threshold)
+            {
+                currentUnit = u;
+                Debug.Log("Turn: " + u.characterName);
+                break;
+            }
         }
     }
-}
 
+    public void EndTurn()
+    {
+        currentUnit.actionValue = 0f;
+        currentUnit = null;
+    }
+}

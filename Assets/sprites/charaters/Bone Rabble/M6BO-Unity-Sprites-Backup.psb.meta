@@ -6973,17 +6973,17 @@ ScriptedImporter:
     - name: Ribcage
       guid: 15daa26b83800374a82771bfa5b77d26
       position: {x: -15.693215, y: 62.93218, z: 0}
-      rotation: {x: 0, y: -0, z: 0.7648166, w: 0.6442482}
-      length: 243.74893
+      rotation: {x: 0, y: -0, z: 0.7648168, w: 0.64424783}
+      length: 243.74901
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4288992767
     - name: Neck
       guid: e3dec375975d80749901bdc957c18595
-      position: {x: 243.74896, y: 0.00012601109, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09649255, w: 0.99533373}
-      length: 160.11327
+      position: {x: 243.74905, y: 0.00016555487, z: 0}
+      rotation: {x: 0, y: 0, z: -0.096493326, w: 0.9953337}
+      length: 160.11328
       parentId: 1
       color:
         serializedVersion: 2
@@ -6991,61 +6991,61 @@ ScriptedImporter:
     - name: Should_strap
       guid: 350ec25bc3f425846a3c936d4f58756e
       position: {x: 54.892063, y: -87.30683, z: 0}
-      rotation: {x: 0, y: -0, z: -0.72460306, w: 0.6891665}
-      length: 97.7775
+      rotation: {x: 0, y: -0, z: -0.7246033, w: 0.6891662}
+      length: 97.77753
       parentId: 2
       color:
         serializedVersion: 2
-        rgba: 4287430911
+        rgba: 4292389119
     - name: Right Upper Arm
       guid: ae9596dfde93c9842be99e0cfe1cd3c0
-      position: {x: 97.777504, y: -0.000102787184, z: 0}
-      rotation: {x: 0, y: 0, z: -0.42184994, w: 0.9066657}
-      length: 332.73376
+      position: {x: 97.77751, y: 0.00003512847, z: 0}
+      rotation: {x: 0, y: 0, z: -0.4218497, w: 0.9066658}
+      length: 332.7338
       parentId: 3
       color:
         serializedVersion: 2
-        rgba: 4287430911
+        rgba: 4292389119
     - name: Right Lower Arm
       guid: 3033faecb513d4c4e944e04ad386bf18
-      position: {x: 332.73376, y: -0.000113589835, z: 0}
-      rotation: {x: 0, y: 0, z: -0.4191675, w: 0.907909}
-      length: 224.59766
+      position: {x: 332.73386, y: -0.00006714213, z: 0}
+      rotation: {x: 0, y: 0, z: -0.41916698, w: 0.90790915}
+      length: 224.59773
       parentId: 4
       color:
         serializedVersion: 2
-        rgba: 4287430911
+        rgba: 4292389119
     - name: Right Hand
       guid: 94bdbdfa06a00664fb3cd415bc8f30cf
-      position: {x: 224.59775, y: 0.000040701794, z: 0}
-      rotation: {x: 0, y: 0, z: 0.08350801, w: 0.99650717}
+      position: {x: 224.59773, y: 0.00007311266, z: 0}
+      rotation: {x: 0, y: 0, z: 0.083507575, w: 0.99650717}
       length: 171.09702
       parentId: 5
       color:
         serializedVersion: 2
-        rgba: 4287430911
+        rgba: 4292389119
     - name: Left Upper Arm
       guid: 90eb2cd327ded6545a4799ea8a0de126
       position: {x: -91.31948, y: 112.0384, z: 0}
       rotation: {x: 0, y: -0, z: 0.9975311, w: 0.070226476}
-      length: 195.734
+      length: 195.7342
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294836479
     - name: Left Lower Arm
       guid: 98e0586ffcbedb44a801560c86b257f8
-      position: {x: 195.73416, y: -0.00009918637, z: 0}
+      position: {x: 195.73413, y: -0.00013092888, z: 0}
       rotation: {x: 0, y: 0, z: -0.08634282, w: 0.99626553}
-      length: 230.44383
+      length: 230.44386
       parentId: 7
       color:
         serializedVersion: 2
         rgba: 4294836479
     - name: Left Hand
       guid: d431c1e7a68b07745942674179c8e654
-      position: {x: 230.44388, y: -0.000043057975, z: 0}
-      rotation: {x: 0, y: 0, z: 0.121182114, w: 0.9926303}
+      position: {x: 230.44398, y: 0.0000067650217, z: 0}
+      rotation: {x: 0, y: 0, z: 0.12118208, w: 0.9926303}
       length: 218.87279
       parentId: 8
       color:
@@ -7055,14 +7055,14 @@ ScriptedImporter:
       guid: a7eed91f5b401b74ba946eeffe2d0776
       position: {x: -76.22446, y: -94.01531, z: 0}
       rotation: {x: 0, y: -0, z: -0.7638401, w: 0.6454056}
-      length: 438.2749
+      length: 438.27484
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Left Lower Leg 1
       guid: a8fbd777908647548acf8134fa02f244
-      position: {x: 438.27487, y: 0.000052568204, z: 0}
+      position: {x: 438.2748, y: 0.000044254073, z: 0}
       rotation: {x: 0, y: 0, z: 0.024079746, w: 0.9997101}
       length: 168.9093
       parentId: 10
@@ -7082,14 +7082,14 @@ ScriptedImporter:
       guid: a70f769c976e9cf41aa037924c356b77
       position: {x: 294.8101, y: 0.000012535336, z: 0}
       rotation: {x: 0, y: 0, z: 0.008215976, w: 0.99996626}
-      length: 277.75555
+      length: 277.7555
       parentId: 12
       color:
         serializedVersion: 2
         rgba: 4294961152
     - name: Right Lower Leg
       guid: 2e0d8978aefc32f488e7a1ec324966c0
-      position: {x: 277.75543, y: -0.000043619017, z: 0}
+      position: {x: 277.75537, y: -0.000022449989, z: 0}
       rotation: {x: 0, y: 0, z: 0.06525546, w: 0.9978686}
       length: 200.89514
       parentId: 13
@@ -7098,7 +7098,7 @@ ScriptedImporter:
         rgba: 4294961152
     - name: Right Foot
       guid: 240b1b9b33c1a32428aa4916a0dac482
-      position: {x: 200.89516, y: -0.000017526821, z: 0}
+      position: {x: 200.89516, y: 0.000010917291, z: 0}
       rotation: {x: 0, y: 0, z: -0.32856947, w: 0.9444798}
       length: 147.69662
       parentId: 14
@@ -7107,7 +7107,7 @@ ScriptedImporter:
         rgba: 4294961152
     - name: Left Lower Leg 2
       guid: 27e25b55436b7354dbdf9422c19c3414
-      position: {x: 168.9093, y: 0.00012343145, z: 0}
+      position: {x: 168.9093, y: 0.000118038144, z: 0}
       rotation: {x: 0, y: 0, z: 0.05508036, w: 0.9984819}
       length: 124.859215
       parentId: 11
@@ -7116,17 +7116,17 @@ ScriptedImporter:
         rgba: 4278255360
     - name: Left Lower Leg 3
       guid: ba9f415b272b9d74b8a65e338334d386
-      position: {x: 124.85924, y: 0.00004739422, z: 0}
-      rotation: {x: 0, y: 0, z: -0.019339576, w: 0.99981296}
-      length: 80.06541
+      position: {x: 124.85924, y: 0.000048720845, z: 0}
+      rotation: {x: 0, y: 0, z: -0.019340346, w: 0.99981296}
+      length: 80.065414
       parentId: 16
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Left Foot
       guid: 0c56a7230ce5d1744a16913899a28c71
-      position: {x: 80.065414, y: -0.000033321223, z: 0}
-      rotation: {x: 0, y: 0, z: -0.66913116, w: 0.74314433}
+      position: {x: 80.0654, y: 0.0000122809115, z: 0}
+      rotation: {x: 0, y: 0, z: -0.6691306, w: 0.74314487}
       length: 170.26114
       parentId: 17
       color:
@@ -7134,8 +7134,8 @@ ScriptedImporter:
         rgba: 4278255360
     - name: Head
       guid: 79eb65fb35813a14b8a1aee186c559aa
-      position: {x: 160.1133, y: -0.000073112715, z: 0}
-      rotation: {x: 0, y: 0, z: 0.41076103, w: 0.91174304}
+      position: {x: 160.11322, y: -0.000013296844, z: 0}
+      rotation: {x: 0, y: 0, z: 0.41076133, w: 0.9117429}
       length: 165.42365
       parentId: 2
       color:

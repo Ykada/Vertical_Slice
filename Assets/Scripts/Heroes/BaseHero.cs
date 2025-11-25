@@ -36,36 +36,36 @@ public class BaseHero : MonoBehaviour
             TimeElapsed = 0;
         }
     }
-    protected void TakeDamage(float accEnemy,int damage ,string debuffName, float debuffAcc)
+    protected void TakeDamage(float accEnemy, int damage, string debuffName, float debuffAcc)
     {
         //Alleen voor heroes Enemies hebben een dead state
         if (Dead) return;
         //hit berekening
         float hitChance = accEnemy - dodge + 10;
         Debug.Log(hitChance);
-        int hitCheck = Random.Range(1, 100); 
+        int hitCheck = Random.Range(1, 100);
         if (hitChance >= hitCheck)
-        { 
-            //damage - protection
-            currentHp -= damage+prot;
-            //bools goedzetten
-            Deathsdoor = currentHp == 0;
-            Dead = currentHp < 0;
-            //debuffs
-            if (debuffName == null) return;
-            int index = resNameWithValue.IndexOfKey(debuffName);
-            float debuffHitChance = debuffAcc - resNameWithValue.Values[index];
-            Debug.Log(debuffHitChance);
-            int debuffCheck = Random.Range(1, 100);
-            if (debuffHitChance < debuffCheck) return;
-            Debug.Log(debuffName);
-            //apply debuff??
-        }
-        else
         {
             Debug.Log("Dodge");
+            return;
         }
-    }
+        //damage - protection
+        currentHp -= damage + prot;
+        //bools goedzetten
+        Deathsdoor = currentHp == 0;
+        Dead = currentHp < 0;
+        //debuffs
+        if (debuffName == null) return;
+        int index = resNameWithValue.IndexOfKey(debuffName);
+        float debuffHitChance = debuffAcc - resNameWithValue.Values[index];
+        Debug.Log(debuffHitChance);
+        int debuffCheck = Random.Range(1, 100);
+        if (debuffHitChance < debuffCheck) return;
+        Debug.Log(debuffName);
+        //apply debuff??
+    }  
+        
+    
     protected void HealDamage(int heal, Transform target )
     {
         if (Dead) return;

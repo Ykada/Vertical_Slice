@@ -30,6 +30,17 @@ public class Camera_Movement : MonoBehaviour
 
     private void Update()
     {
+
+        if (Keyboard.current.spaceKey.isPressed)
+        {
+            GetComponent<Camera_Movement>().enabled = true;
+        }
+
+        if(Keyboard.current.leftShiftKey.isPressed)
+        {
+            GetComponent<Camera_Movement>().enabled = false;
+        }
+
         if (Mouse.current != null)
         {
             yaw += Mouse.current.delta.x.ReadValue() * mousesmoothing;
@@ -52,3 +63,4 @@ public class Camera_Movement : MonoBehaviour
         cameraposistion.LookAt(centerpoint.position);
     }
 }
+

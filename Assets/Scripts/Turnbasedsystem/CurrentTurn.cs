@@ -19,6 +19,7 @@ public class CurrentTurn : MonoBehaviour
     {
         foreach (var obj in playersInGame)
             stats.Add(obj.GetComponent<UnitStats>());
+        Debug.Log("Initialized Turn Queue System");
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class CurrentTurn : MonoBehaviour
         // Only fill queue when needed
         if (turnQueue.Count < 5)
             UpdateActionBars();
+        Debug.Log("Current Turn Queue Count: " + turnQueue.Count);
     }
 
     // Increase action bars and add units to the queue

@@ -1,93 +1,49 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Items : MonoBehaviour
 {
     [SerializeField] private List<GameObject> itemList = new List<GameObject>();
 
+    // These functions will be triggered by UI button clicks
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void UseShovel()
     {
-        
+        Debug.Log("removed obstacles");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UseTorch()
     {
-        UseShovel();
-        UseTorch();
-        UseHolyWater();
-        UseAntivenom();
-        UseBandage();
-        UseSkeletonKey();
-        Useportrait();
-        UseFood();
+        Debug.Log("lit torch");
     }
 
-    private void UseShovel()
+    public void UseHolyWater()
     {
-        if (Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            Debug.Log("removed obstacles");
-        }
+        Debug.Log("healholywata");
     }
 
-    private void UseTorch()
+    public void UseAntivenom()
     {
-        if(Keyboard.current.tKey.wasPressedThisFrame)
-        {
-            Debug.Log("lit torch");
-        }
+        Debug.Log("anti");
     }
 
-    private void UseHolyWater()
+    public void UseBandage()
     {
-        if (Keyboard.current.hKey.wasPressedThisFrame)
-        {
-            Debug.Log("healholywata");
-        }
+        Debug.Log("heal");
     }
 
-    private void UseAntivenom()
+    public void UseSkeletonKey()
     {
-        if (Keyboard.current.aKey.wasPressedThisFrame)
-        {
-            Debug.Log("anti");
-        }
+        Debug.Log("used a skeleton key");
     }
 
-    private void UseBandage()
+    public void UsePortrait()
     {
-        if (Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            Debug.Log("heal");
-        }
+        Debug.Log("painting");
     }
 
-    private void UseSkeletonKey()
+    public void UseFood()
     {
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            Debug.Log("used a skeleton key");
-        }
-    }
-
-    private void Useportrait()
-    {
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            Debug.Log("painting");
-        }
-    }
-
-    private void UseFood()
-    {
-        if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            Debug.Log("no more hungry");
-        }
+        Debug.Log("no more hungry");
     }
 }

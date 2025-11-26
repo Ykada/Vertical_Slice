@@ -762,6 +762,26 @@ PrefabInstance:
       propertyPath: 'playersInGame.Array.data[0]'
       value: 
       objectReference: {fileID: 1266127577}
+    - target: {fileID: 2673676654043169444, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 3570809019222901896, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 3592623246321301637, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 5639624862507775633, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    - target: {fileID: 6922166649119876581, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     - target: {fileID: 8822914043419574543, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
       propertyPath: m_Name
       value: Statsui
@@ -790,6 +810,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 37519267639664559, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 158657154449099247, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -851,21 +875,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2546546908181821756}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
-      propertyPath: 'playersInGame.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1266127577}
+      propertyPath: playersInGame.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
-      propertyPath: 'playersInGame.Array.data[1]'
+      propertyPath: 'playersInGame.Array.data[0]'
       value: 
       objectReference: {fileID: 1088987050}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
-      propertyPath: 'playersInGame.Array.data[2]'
+      propertyPath: 'playersInGame.Array.data[1]'
       value: 
       objectReference: {fileID: 505735401}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'playersInGame.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1266127577}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: 'playersInGame.Array.data[3]'
       value: 
       objectReference: {fileID: 87599550}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'playersInGame.Array.data[4]'
+      value: 
+      objectReference: {fileID: 87599550}
+    - target: {fileID: 1442411961520620887, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6225875768261226771, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: m_Name
       value: Turnbasedsystem

@@ -49,6 +49,7 @@ public class CurrentTurn : MonoBehaviour
     // Updates UI Labels
     private void UpdateUI()
     {
+        Debug.Log("Updating Turn Queue UI");
         // Clear UI first
         Selection1.text = turnQueue.Count > 0 ? turnQueue[0].characterName : "";
         Selection2.text = turnQueue.Count > 1 ? turnQueue[1].characterName : "";

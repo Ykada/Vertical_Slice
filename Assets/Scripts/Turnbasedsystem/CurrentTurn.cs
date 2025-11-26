@@ -27,7 +27,7 @@ public class CurrentTurn : MonoBehaviour
         // Only fill queue when needed
         if (turnQueue.Count < 5)
             UpdateActionBars();
-        Debug.Log("Current Turn Queue Count: " + turnQueue.Count);
+        Debug.Log("Current Turn Queue Count: " + currentUnit);
     }
 
     // Increase action bars and add units to the queue

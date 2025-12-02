@@ -25,6 +25,9 @@ public class BaseHero : MonoBehaviour
         //testing
         resNameWithValue.Add("move", 40);
         //bij enemy turn de acc van de attack oproepen
+
+        //Moet naar indivuele hero scripts 
+        Target.OnTargetSelected += DealDamage;
     }
     private void Update()
     {
@@ -75,9 +78,10 @@ public class BaseHero : MonoBehaviour
         if (currentHp > maxHp) currentHp = maxHp;
     }
 
-    protected void DealDamage(float accAttack, int damage, string debuffName, float debuffAcc, GameObject target)
+    protected void DealDamage(GameObject target)
     {
         if (Dead) return;
-
+        //get stats somehow
+        //target.GetComponent<BaseHero>().TakeDamage(//stats);
     }
 }

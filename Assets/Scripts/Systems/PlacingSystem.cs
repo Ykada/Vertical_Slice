@@ -12,10 +12,22 @@ public class PlacingSystem : MonoBehaviour
     [SerializeField] private List<GameObject> heroPrefabs = new List<GameObject>();
 
     private int indexOfTarget;
-    //testing
+    
+    public List<GameObject> EnemyPrefabs
+    {
+        get
+        {
+            return enemyPrefabs;
+        }
+    }
     private void Start()
     {
         Placing();
+        foreach (GameObject enemy in enemyPrefabs)
+        {
+            enemy.AddComponent<Target>();
+            
+        }
     }
     private void Placing()
     {
@@ -76,7 +88,7 @@ public class PlacingSystem : MonoBehaviour
         MoveLeftorRightEnemy(1);
         return;
     }
-    private void MoveLeftorRightHero(int WhatWay)
+    public void MoveLeftorRightHero(int WhatWay)
     {
         GameObject temp = heroPrefabs[indexOfTarget + WhatWay];
         heroPrefabs[indexOfTarget + WhatWay] = heroPrefabs[indexOfTarget];

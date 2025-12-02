@@ -4,75 +4,118 @@ using UnityEngine.UI;
 
 public class CurrentTurn : MonoBehaviour
 {
+    [Header("References")]
     public List<GameObject> playersInGame = new List<GameObject>();
-    private List<UnitStats> stats = new List<UnitStats>();
 
-    [SerializeField] private Text Selection1, Selection2, Selection3, Selection4, Selection5;
+    [Header("UI Display (Next 5 Turns)")]
+    [SerializeField] private Text[] turnLabels = new Text[5];
 
-    private UnitStats currentUnit;
+    [Header("Settings")]
     [SerializeField] private float threshold = 1000f;
 
-    // A list that stores the next 5 units acting
+    private List<UnitStats> stats = new List<UnitStats>();
     private List<UnitStats> turnQueue = new List<UnitStats>();
 
-    void Start()
+    private void Start()
     {
         foreach (var obj in playersInGame)
-            stats.Add(obj.GetComponent<UnitStats>());
+        {
+            UnitStats unit = obj.GetComponent<UnitStats>();
+            if (unit != null)
+                stats.Add(unit);
+        }
+
         Debug.Log("Initialized Turn Queue System");
+        UpdateActionBars();
     }
 
-    void Update()
+    private void Update()
     {
-        // Only fill queue when needed
+
+        // Only update if queue needs filling
         if (turnQueue.Count < 5)
+        {
             UpdateActionBars();
-        Debug.Log("Current Turn Queue Count: " + currentUnit);
+            addopponenttoceue(stats[1]);
+            UpdateUI();
+        };
+        
+        
     }
 
-    // Increase action bars and add units to the queue
+    /// <summary>
+    /// Increases action values and assigns units to the turn queue.
+    /// </summary>
     private void UpdateActionBars()
     {
-        foreach (UnitStats u in stats)
+        foreach (UnitStats unit in stats)
         {
-            u.actionValue += u.speed * Time.deltaTime;
+            unit.actionValue += unit.speed * Time.deltaTime;
 
-            if (u.actionValue >= threshold && !turnQueue.Contains(u))
+            bool thresholdReached = unit.actionValue >= threshold;
+            bool notAlreadyQueued = !turnQueue.Contains(unit);
+
+            if (thresholdReached && notAlreadyQueued)
             {
-                turnQueue.Add(u);
+                turnQueue.Add(unit);
+
+                // Refresh UI when the queue fills
                 if (turnQueue.Count == 5)
-                {
                     UpdateUI();
-                }
             }
         }
     }
 
-    // Updates UI Labels
+    /// <summary>
+    /// Updates the next 5 turn indicators in UI.
+    /// </summary>
     private void UpdateUI()
     {
-        Debug.Log("Updating Turn Queue UI");
-        // Clear UI first
-        Selection1.text = turnQueue.Count > 0 ? turnQueue[0].characterName : "";
-        Selection2.text = turnQueue.Count > 1 ? turnQueue[1].characterName : "";
-        Selection3.text = turnQueue.Count > 2 ? turnQueue[2].characterName : "";
-        Selection4.text = turnQueue.Count > 3 ? turnQueue[3].characterName : "";
-        Selection5.text = turnQueue.Count > 4 ? turnQueue[4].characterName : "";
+        for (int i = 0; i < turnLabels.Length; i++)
+        {
+            if (i < turnQueue.Count)
+                turnLabels[i].text = turnQueue[i].characterName;
+            else
+                turnLabels[i].text = "";
+        }
     }
 
-    // Called when the player ends their turn
+    /// <summary>
+    /// Called when the current acting unit finishes its turn.
+    /// </summary>
     public void EndTurn()
     {
-        if (turnQueue.Count == 0) return;
+        if (turnQueue.Count == 0)
+            return;
 
-        // The first unit completed its turn
-        UnitStats finished = turnQueue[0];
-        finished.actionValue = 0;
+        // Reset first unit's action bar
+        UnitStats finishedUnit = turnQueue[0];
+        finishedUnit.actionValue = 0;
 
-        // Remove it and shift list
+        // Remove from queue
         turnQueue.RemoveAt(0);
 
-        // Try to refill the queue
+        // Update display immediately
         UpdateUI();
+
+        addopponenttoceue(stats[1]);
+        addopponenttoceue(stats[2]);
+        addopponenttoceue(stats[3]);
+        addopponenttoceue(stats[4]);
+        addopponenttoceue(stats[5]);
+    }
+    private void addopponenttoceue(UnitStats opponent)
+    {
+        bool thresholdReached = opponent.actionValue >= threshold;
+        bool notAlreadyQueued = !turnQueue.Contains(opponent);
+
+        if (thresholdReached && notAlreadyQueued)
+        {
+            turnQueue.Add(opponent);
+
+            // Refresh UI when the queue fills
+            if (turnQueue.Count == 5)
+                UpdateUI();
+        }
     }
 }

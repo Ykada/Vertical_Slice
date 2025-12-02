@@ -678,6 +678,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100991208946585601, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 858712553769950492, guid: 26bab816b4b38fc49a418b0fb8f85755, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -855,6 +859,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: threshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: Selection1
       value: 
       objectReference: {fileID: 3039230409414955904}
@@ -878,6 +886,26 @@ PrefabInstance:
       propertyPath: playersInGame.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'turnLabels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3039230409414955904}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'turnLabels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8909034525452568140}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'turnLabels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3635911906246466124}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'turnLabels.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8711583078680819646}
+    - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
+      propertyPath: 'turnLabels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2546546908181821756}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: 'playersInGame.Array.data[0]'
       value: 

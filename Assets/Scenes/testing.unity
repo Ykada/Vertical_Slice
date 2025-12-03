@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   characterName: player2
-  speed: 1
+  speed: 2
   actionValue: 0
 --- !u!4 &1088987052
 Transform:

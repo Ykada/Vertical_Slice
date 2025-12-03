@@ -49,12 +49,10 @@ public class Target : TargetSystem
     private void OnMouseOver()
     {
         if (!availableTarget)return;
-        Debug.Log(gameObject.name);
     }
     private void OnMouseExit()
     {
         if (!availableTarget)return;
-        Debug.Log("exited: " +gameObject.name);
     }
     private void OnMouseDown()
     {

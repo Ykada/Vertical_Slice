@@ -7,39 +7,45 @@ public class BaseHero : MonoBehaviour
 {   
     //flat stats 
     [SerializeField] protected int maxHp, prot, dodge, spd, accMod;
+    private int accModAttack;
     //percentages
     [SerializeField] protected float crit;
+    private float critAttack;
     //base damage range
     [SerializeField] protected Vector2 dmgRange;
+    private Vector2 dmgRangeAttack;
     //resistances
     protected SortedList<string, float> resNameWithValue = new SortedList<string, float>();
     //dood of niet
     public bool Dead = false;
     protected bool Deathsdoor = false;
     //HpCounter
+    private string debuff;
+    private float debuffAcc;
     private int currentHp;
-    //tijdelijk testing
-    private float TimeElapsed;
+    protected SelectAttack selectAttack;
+    
     private void Start()
     {
         //testing
         resNameWithValue.Add("move", 40);
+        Invoke("AfterStart", 1);
         //bij enemy turn de acc van de attack oproepen
 
         //Moet naar indivuele hero scripts 
         Target.OnTargetSelected += DealDamage;
+        Attacks.Stats += getStats;
+        selectAttack = GameObject.Find("SelectAttack").GetComponent<SelectAttack>();
+        currentHp = maxHp;
     }
-    private void Update()
+    //testing
+    protected void AfterStart()
     {
-        //testing
-        TimeElapsed += Time.deltaTime;
-        if (TimeElapsed > 2)
-        {
-            TakeDamage(82.5f, 0 , "move", 100);
-            TimeElapsed = 0;
-        }
+        
+        selectAttack.Buttons[1].GetComponent<Attacks>().DmgMod = 5;
+        selectAttack.Buttons[0].GetComponent<Attacks>().DmgMod = 7;
     }
-    protected void TakeDamage(float accEnemy, int damage, string debuffName, float debuffAcc)
+    public void TakeDamage(float accEnemy, int damageEnemy, string debuffName, float debuffAcc)
     {
         //Alleen voor heroes Enemies hebben een dead state
         if (Dead) return;
@@ -53,7 +59,7 @@ public class BaseHero : MonoBehaviour
             return;
         }
         //damage - protection
-        currentHp -= damage + prot;
+        currentHp -= damageEnemy - prot;
         //bools goedzetten
         Deathsdoor = currentHp == 0;
         Dead = currentHp < 0;
@@ -69,7 +75,7 @@ public class BaseHero : MonoBehaviour
     }  
         
     
-    protected void HealDamage(int heal, Transform target )
+    protected void HealDamage(int heal)
     {
         if (Dead) return;
         if (currentHp >= maxHp) return;
@@ -81,7 +87,23 @@ public class BaseHero : MonoBehaviour
     protected void DealDamage(GameObject target)
     {
         if (Dead) return;
-        //get stats somehow
-        //target.GetComponent<BaseHero>().TakeDamage(//stats);
+        int critCheck = Random.Range(1, 100);
+        if (critAttack >= critCheck)
+        {
+            dmgRangeAttack = new Vector2(dmgRangeAttack.x * 2, dmgRangeAttack.y * 2);
+        }
+        int damageAttack = Random.Range(Mathf.CeilToInt(dmgRangeAttack.x), Mathf.CeilToInt(dmgRangeAttack.y));
+        target.GetComponent<BaseEnemy>().TakeDamage(accModAttack, damageAttack, debuff, debuffAcc);
+        Debug.Log(damageAttack + target.name);
+    }
+    
+    private void getStats(float critAttac, float damage, int accuracyAttack, string debuffName, float debuffChance)
+    {
+        critAttack = crit + critAttac;
+        dmgRangeAttack = new Vector2(dmgRange.x * damage, dmgRange.y * damage);
+        accModAttack = accMod + accuracyAttack;
+        debuff = debuffName;
+        debuffAcc = debuffChance;
+        Debug.Log(dmgRangeAttack.x + " " + dmgRangeAttack.y);
     }
 }

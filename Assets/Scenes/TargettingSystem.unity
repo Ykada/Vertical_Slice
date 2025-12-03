@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 255521257}
   - component: {fileID: 255521256}
   - component: {fileID: 255521258}
+  - component: {fileID: 255521259}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -753,6 +754,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &255521259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255521255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbbb52ffba1b8e4b9328ea774637810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseHero
+  maxHp: 100
+  prot: 0
+  dodge: 0
+  spd: 0
+  accMod: 0
+  crit: 0
+  dmgRange: {x: 1, y: 5}
+  Dead: 0
 --- !u!1 &776377245
 GameObject:
   m_ObjectHideFlags: 0

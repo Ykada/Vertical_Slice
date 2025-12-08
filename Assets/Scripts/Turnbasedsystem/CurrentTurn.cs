@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class CurrentTurn : MonoBehaviour
 {
     [Header("References")]
-    public List<GameObject> playersInGame = new List<GameObject>();
-
+    [SerializeField] private List<GameObject> playersInGame = new List<GameObject>();
+   
     [Header("UI Display (Next 5 Turns)")]
     [SerializeField] private Text[] turnLabels = new Text[5];
 

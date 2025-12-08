@@ -221,7 +221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 2f4bc57d844842a4d82944611efbe400, type: 3}
       propertyPath: m_Name
-      value: sprite for animation
+      value: Highwayman
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 2f4bc57d844842a4d82944611efbe400, type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +270,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 2f4bc57d844842a4d82944611efbe400, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2073417083}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 2f4bc57d844842a4d82944611efbe400, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2073417084}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 2f4bc57d844842a4d82944611efbe400, type: 3}
 --- !u!1 &2073417082 stripped
 GameObject:
@@ -322,6 +325,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.2469761, y: 3.5718884}
   m_EdgeRadius: 0
+--- !u!114 &2073417084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073417082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highwayman
+  maxHp: 23
+  prot: 0
+  dodge: 10
+  spd: 5
+  accMod: 0
+  crit: 5
+  dmgRange: {x: 5, y: 10}
+  Dead: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

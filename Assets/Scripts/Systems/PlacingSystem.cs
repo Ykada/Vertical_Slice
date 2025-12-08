@@ -26,7 +26,6 @@ public class PlacingSystem : MonoBehaviour
         foreach (GameObject enemy in enemyPrefabs)
         {
             enemy.AddComponent<Target>();
-            
         }
     }
     private void Placing()

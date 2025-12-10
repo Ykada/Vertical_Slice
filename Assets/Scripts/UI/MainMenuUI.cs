@@ -14,8 +14,12 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("UI Canvas")]
     [SerializeField] private Canvas mainMenuCanvas;
-    [SerializeField] private Canvas CampainstartCanvas;
-    [SerializeField] private Canvas savingCanvas;
+    [SerializeField] private GameObject CampainstartCanvas;
+    [SerializeField] private GameObject savingCanvas;
+
+    [Header("Main Menu Canvas")]
+    [SerializeField] private Button StartButton; // Switches to CampainstartCanvas
+
     [Header("Saving Canvas")]
     [SerializeField] private Button StartGameButten; // Saves the text and switches to nieuw scene
     [SerializeField] private InputField SaveGametext1;
@@ -26,14 +30,18 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        mainMenuCanvas.enabled = true;
-        CampainstartCanvas.enabled = false;
-        savingCanvas.enabled = false;
+        CampainstartCanvas.SetActive(true);
+        savingCanvas.SetActive(false);
         savefilepath = Path.Combine(Application.persistentDataPath, "MenuSave.txt");
+        StartButton.onClick.AddListener(() =>
+        {
+            CampainstartCanvas.SetActive(false);
+            savingCanvas.SetActive(true);
+        });
         StartGameButten.onClick.AddListener(() =>
         {
             Savedata();
-            //SceneManager.LoadScene(""); // Put the scene name here where you want to go
+            SceneManager.LoadScene("Staging Scene"); // Put the scene name here where you want to go
         });
         loaddata();
     }
@@ -49,8 +57,6 @@ public class MainMenuUI : MonoBehaviour
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(savefilepath, json);
-        Debug.Log("Data Saved to " + savefilepath);
-        Debug.Log(json);
     }
     private void loaddata()
     {
@@ -58,7 +64,6 @@ public class MainMenuUI : MonoBehaviour
         {
             string json = File.ReadAllText(savefilepath);
             MenuTextSavingData data = JsonUtility.FromJson<MenuTextSavingData>(json);
-            Debug.Log(json);
             SaveGametext1.text = data.SaveGame1;
             SaveGametext2.text = data.SaveGame2;
 
@@ -66,7 +71,6 @@ public class MainMenuUI : MonoBehaviour
         else {
             Debug.Log("No save file found at " + savefilepath);
         }
-        Debug.Log("Data Loaded from " + savefilepath);
         
     }
 

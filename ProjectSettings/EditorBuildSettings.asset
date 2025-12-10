@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Staging/Staging MainMenu.unity
+    guid: 002054606ac2b9444bac01d6332d8db7
+  - enabled: 1
+    path: Assets/Scenes/Staging/Staging Scene.unity
+    guid: 8b25a02069ee773418efcf1823ffe56d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

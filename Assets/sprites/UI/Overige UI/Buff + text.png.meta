@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 7526904b51fb2e74884b9af8b9f4a3e7
+guid: 0790af7b871631143993ae6abf917578
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7005011133444275235
-    second: Skeleton Key_0
+      213: -5227400666513519963
+    second: Buff + text_0
+  - first:
+      213: -25093503232512708
+    second: Buff + text_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 325
+  spritePixelsToUnits: 380
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton Key_0
+      name: Buff + text_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 243
-        height: 481
+        y: 33
+        width: 209
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd3c56ffc7339ce90800000000000000
-      internalID: -7005011133444275235
+      spriteID: 5aa42dd2aca8477b0800000000000000
+      internalID: -5227400666513519963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buff + text_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 0
+        width: 514
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3de7ad7799d6aff0800000000000000
+      internalID: -25093503232512708
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Skeleton Key_0: -7005011133444275235
+      Buff + text_0: -5227400666513519963
+      Buff + text_1: -25093503232512708
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

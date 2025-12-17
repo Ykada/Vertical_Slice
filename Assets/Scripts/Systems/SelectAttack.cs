@@ -38,19 +38,19 @@ public class Attacks : MonoBehaviour
     //first target to hit, last target to hit
     public static event Action<float, float, int, string, float> Stats;
     public static event Action<int, int> AttackSelected;
-    private int startTarget, endTarget, accAttack;
-    private float crit, dmgMod, debuffChance;
+    private int startTarget, endTarget, accuracyAttack;
+    private float critAttack, damageMod, debuffChance;
     private string debuffName;
-    private TMP_Text text;
-    private bool FirstTime = true;
+    private bool firstTime = true;
 
     private void Start()
     {
-        text = GameObject.Find("TArgets").GetComponent<TMP_Text>();
+        
+        AttackStats.OnStatChange += ReadStats;
     }
-    public float Crit
+    public float CritAttack
     {
-        set { crit = value; }
+        set { critAttack = value; }
     }
     public float DebuffChance
     {
@@ -60,13 +60,13 @@ public class Attacks : MonoBehaviour
     {
         set { debuffName = value; }
     }
-    public float DmgMod
+    public float DamageMod
     {
-        set { dmgMod = value; }
+        set { damageMod = value; }
     }
-    public int AccAttack
+    public int AccuracyAttack
     {
-        set { accAttack = value; }
+        set { accuracyAttack = value; }
     }
     public int StartTarget
     {
@@ -88,23 +88,18 @@ public class Attacks : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (FirstTime && startTarget != 0) 
+        if (firstTime && startTarget != 0) 
         { 
-            int temp = 0;
-            AttackSelected?.Invoke(temp, endTarget);
+            AttackSelected?.Invoke(0, endTarget);
         }
         AttackSelected?.Invoke(startTarget, endTarget);
-        FirstTime = false;
+        firstTime = false;
         //attackSelected
-        text.text = "Targets: " + (startTarget+1) +" t/m "+ (endTarget +1);
         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        Invoke("resetButtons", 0.5f);
-        
-
-        Stats?.Invoke(crit, dmgMod, accAttack, debuffName, debuffChance);
+        Stats?.Invoke(critAttack, damageMod, accuracyAttack, debuffName, debuffChance);
     }
-    private void resetButtons()
+    private void ReadStats()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        Debug.Log($"{gameObject.name} stats: Crit {critAttack}, Debuff {debuffName}:{debuffChance}, Damage {damageMod * 100}, Accuracy {accuracyAttack}, Targets {startTarget} t/m {endTarget}");
     }
 }

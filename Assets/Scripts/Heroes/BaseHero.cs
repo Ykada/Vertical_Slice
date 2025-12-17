@@ -6,44 +6,29 @@ using UnityEngine;
 public class BaseHero : MonoBehaviour
 {   
     //flat stats 
-    [SerializeField] protected int maxHp, prot, dodge, spd, accMod;
-    private int accModAttack;
+    [SerializeField] protected int maxHp, prot, dodge, spd, accuracyMod;
+    private int accuracyModAttack;
     //percentages
     [SerializeField] protected float crit;
-    private float critAttack;
+    private float tempCritAttack;
     //base damage range
-    [SerializeField] protected Vector2 dmgRange;
-    private Vector2 dmgRangeAttack;
+    [SerializeField] protected Vector2 damageRange;
+    private Vector2 damageRangeAttack;
     //resistances
     protected SortedList<string, float> resNameWithValue = new SortedList<string, float>();
     //dood of niet
-    public bool Dead = false;
-    protected bool Deathsdoor = false;
+    private bool Dead = false;
+    private bool Deathsdoor = false;
     //HpCounter
     private string debuff;
-    private float debuffAcc;
+    private float debuffAccuracy;
     private int currentHp;
-    protected SelectAttack selectAttack;
-    
+
     private void Start()
     {
-        //testing
-        resNameWithValue.Add("move", 40);
-        Invoke("AfterStart", 1);
-        //bij enemy turn de acc van de attack oproepen
-
-        //Moet naar indivuele hero scripts 
-        Target.OnTargetSelected += DealDamage;
-        Attacks.Stats += getStats;
-        selectAttack = GameObject.Find("SelectAttack").GetComponent<SelectAttack>();
         currentHp = maxHp;
-    }
-    //testing
-    protected void AfterStart()
-    {
-        
-        selectAttack.Buttons[1].GetComponent<Attacks>().DmgMod = 5;
-        selectAttack.Buttons[0].GetComponent<Attacks>().DmgMod = 7;
+        Target.OnTargetSelected += DealDamage;
+        Attacks.Stats += GetStats;
     }
     public void TakeDamage(float accEnemy, int damageEnemy, string debuffName, float debuffAcc)
     {
@@ -59,10 +44,12 @@ public class BaseHero : MonoBehaviour
             return;
         }
         //damage - protection
-        currentHp -= damageEnemy - prot;
+        currentHp -= (damageEnemy - prot);
+        if (currentHp < 0 && !Deathsdoor) currentHp = 0;
         //bools goedzetten
         Deathsdoor = currentHp == 0;
         Dead = currentHp < 0;
+        if (Dead) Destroy(gameObject);
         //debuffs
         if (debuffName == null) return;
         int index = resNameWithValue.IndexOfKey(debuffName);
@@ -88,22 +75,21 @@ public class BaseHero : MonoBehaviour
     {
         if (Dead) return;
         int critCheck = Random.Range(1, 100);
-        if (critAttack >= critCheck)
+        if (tempCritAttack >= critCheck)
         {
-            dmgRangeAttack = new Vector2(dmgRangeAttack.x * 2, dmgRangeAttack.y * 2);
+            damageRangeAttack = new Vector2(damageRangeAttack.x * 2, damageRangeAttack.y * 2);
         }
-        int damageAttack = Random.Range(Mathf.CeilToInt(dmgRangeAttack.x), Mathf.CeilToInt(dmgRangeAttack.y));
-        target.GetComponent<BaseEnemy>().TakeDamage(accModAttack, damageAttack, debuff, debuffAcc);
-        Debug.Log(damageAttack + target.name);
+        int damageAttack = Random.Range(Mathf.CeilToInt(damageRangeAttack.x), Mathf.CeilToInt(damageRangeAttack.y));
+        target.GetComponent<BaseEnemy>().TakeDamage(accuracyModAttack, damageAttack, debuff, debuffAccuracy);
+        Debug.Log(accuracyModAttack);
     }
     
-    private void getStats(float critAttac, float damage, int accuracyAttack, string debuffName, float debuffChance)
+    private void GetStats(float critAttack, float damage, int accuracyAttack, string debuffName, float debuffChance)
     {
-        critAttack = crit + critAttac;
-        dmgRangeAttack = new Vector2(dmgRange.x * damage, dmgRange.y * damage);
-        accModAttack = accMod + accuracyAttack;
+        tempCritAttack = crit + critAttack;
+        damageRangeAttack = new Vector2(damageRange.x * damage, damageRange.y * damage);
+        accuracyModAttack = accuracyMod + accuracyAttack;
         debuff = debuffName;
-        debuffAcc = debuffChance;
-        Debug.Log(dmgRangeAttack.x + " " + dmgRangeAttack.y);
+        debuffAccuracy = debuffChance;
     }
 }

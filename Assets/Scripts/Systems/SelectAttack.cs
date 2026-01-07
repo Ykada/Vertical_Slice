@@ -36,6 +36,7 @@ public class SelectAttack : MonoBehaviour
 public class Attacks : MonoBehaviour
 {
     //first target to hit, last target to hit
+    public static event Action<float, int, string> Heal;
     public static event Action<float, float, int, string, float> Stats;
     public static event Action<int, int> AttackSelected;
     private int startTarget, endTarget, accuracyAttack;
@@ -87,7 +88,12 @@ public class Attacks : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
     private void OnMouseDown()
-    {
+    { 
+        if (startTarget == 4) 
+        {
+            Heal?.Invoke(critAttack, ((int)damageMod), debuffName);
+            return;
+        }
         if (firstTime && startTarget != 0) 
         { 
             AttackSelected?.Invoke(0, endTarget);

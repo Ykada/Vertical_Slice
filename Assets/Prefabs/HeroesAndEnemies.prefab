@@ -88,6 +88,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4331169358925163618}
+  - component: {fileID: 8633268308048088565}
+  - component: {fileID: 4419236085815740278}
   m_Layer: 0
   m_Name: Highwayman
   m_TagString: Untagged
@@ -111,6 +113,68 @@ Transform:
   - {fileID: 6820579763279454531}
   m_Father: {fileID: 7539989150295791192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8633268308048088565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077840132660933328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highwayman
+  damageMods:
+  - 0.85
+  - 0.85
+  - 0.2
+  - 0.5
+  startTargets: 00000000010000000100000000000000
+  endTargets: 01000000020000000200000002000000
+  critAttacks:
+  - 0
+  - 7.5
+  - 0
+  - -9
+  debuffNames:
+  - Bleed
+  - 
+  - 
+  - 
+  debuffChance:
+  - 100
+  - 0
+  - 0
+  - 0
+  accuracyAttacks: 5f000000550000005f0000004b000000
+--- !u!114 &4419236085815740278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077840132660933328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 23
+  prot: 0
+  dodge: 10
+  speed: 5
+  accuracyMod: 0
+  crit: 5
+  stunRes: 30
+  blightRes: 30
+  diseaseRes: 30
+  moveRes: 30
+  bleedRes: 30
+  debuffRes: 30
+  damageRange: {x: 5, y: 10}
+  characterName: Highwayman
+  actionValue: 0
 --- !u!1 &2184597360540724519
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +184,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3604360597348754281}
+  - component: {fileID: 8489431600459188709}
+  - component: {fileID: 2999434345448578251}
   m_Layer: 0
   m_Name: Vestal
   m_TagString: Untagged
@@ -143,6 +209,68 @@ Transform:
   - {fileID: 3070197262374144685}
   m_Father: {fileID: 7539989150295791192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8489431600459188709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184597360540724519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackStats
+  damageMods:
+  - 1
+  - 0.75
+  - 5
+  - 0.25
+  startTargets: 00000000000000000400000000000000
+  endTargets: 01000000020000000200000002000000
+  critAttacks:
+  - 0
+  - 5
+  - 1
+  - 0
+  debuffNames:
+  - 
+  - 
+  - Heal
+  - 
+  debuffChance:
+  - 0
+  - 0
+  - 0
+  - 0
+  accuracyAttacks: 5500000055000000550000005a000000
+--- !u!114 &2999434345448578251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184597360540724519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 24
+  prot: 0
+  dodge: 0
+  speed: 4
+  accuracyMod: 0
+  crit: 1
+  stunRes: 30
+  blightRes: 30
+  diseaseRes: 30
+  moveRes: 30
+  bleedRes: 30
+  debuffRes: 30
+  damageRange: {x: 4, y: 8}
+  characterName: Vestal
+  actionValue: 0
 --- !u!1 &4547304251454831589
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3365981587656922900}
   - component: {fileID: 5352546815788587185}
+  - component: {fileID: 3009371145281573673}
   m_Layer: 0
   m_Name: CultistAcolyte
   m_TagString: Untagged
@@ -260,6 +389,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.391898, y: 3.746514}
   m_EdgeRadius: 0
+--- !u!114 &3009371145281573673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5674390428075771004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d1ca66e2bf22949a651fa66c912607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
+  maxHp: 23
+  prot: 0
+  dodge: 0
+  spd: 0
+  accMod: 0
 --- !u!1 &5801579353377341341
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +415,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4133301166349696957}
+  - component: {fileID: 2340823041738918024}
+  - component: {fileID: 458932933808371523}
   m_Layer: 0
   m_Name: PlagueDoctor
   m_TagString: Untagged
@@ -292,6 +440,68 @@ Transform:
   - {fileID: 8507263433682969849}
   m_Father: {fileID: 7539989150295791192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2340823041738918024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801579353377341341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 22
+  prot: 0
+  dodge: 0
+  speed: 7
+  accuracyMod: 0
+  crit: 2
+  stunRes: 20
+  blightRes: 60
+  diseaseRes: 50
+  moveRes: 20
+  bleedRes: 20
+  debuffRes: 50
+  damageRange: {x: 4, y: 7}
+  characterName: Plague Doctor
+  actionValue: 0
+--- !u!114 &458932933808371523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801579353377341341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackStats
+  damageMods:
+  - 0.2
+  - 0.1
+  - 0
+  - 1
+  startTargets: 00000000020000000200000000000000
+  endTargets: 01000000020000000200000001000000
+  critAttacks:
+  - 5
+  - 0
+  - 0
+  - 5
+  debuffNames:
+  - Blight
+  - Blight
+  - Stun
+  - Bleed
+  debuffChance:
+  - 100
+  - 100
+  - 100
+  - 100
+  accuracyAttacks: 5f0000005f0000005f00000055000000
 --- !u!1 &7275733213124054566
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +590,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385874310959525880}
+  - component: {fileID: 7586630247147732955}
+  - component: {fileID: 5616750994359590485}
   m_Layer: 0
   m_Name: Crusader
   m_TagString: Untagged
@@ -403,6 +615,68 @@ Transform:
   - {fileID: 6942169673233977419}
   m_Father: {fileID: 7539989150295791192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7586630247147732955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427570522463574132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackStats
+  damageMods:
+  - 1
+  - 0.6
+  - 0.5
+  - 0
+  startTargets: 00000000000000000000000004000000
+  endTargets: 01000000010000000100000000000000
+  critAttacks:
+  - 0
+  - -4
+  - 0
+  - 0
+  debuffNames:
+  - 
+  - 
+  - Stun
+  - 
+  debuffChance:
+  - 0
+  - 0
+  - 100
+  - 0
+  accuracyAttacks: 55000000550000005a00000000000000
+--- !u!114 &5616750994359590485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427570522463574132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 33
+  prot: 0
+  dodge: 5
+  speed: 1
+  accuracyMod: 0
+  crit: 3
+  stunRes: 40
+  blightRes: 30
+  diseaseRes: 30
+  moveRes: 40
+  bleedRes: 30
+  debuffRes: 30
+  damageRange: {x: 6, y: 12}
+  characterName: Crusader
+  actionValue: 0
 --- !u!1001 &1448262547689277137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -627,11 +901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8c42175f47848be488c014c866726a93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15999985
+      value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8c42175f47848be488c014c866726a93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.57999986
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8c42175f47848be488c014c866726a93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -668,13 +942,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 8c42175f47848be488c014c866726a93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1006736823172588511}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 8c42175f47848be488c014c866726a93, type: 3}
 --- !u!4 &4796025335823785718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 8c42175f47848be488c014c866726a93, type: 3}
   m_PrefabInstance: {fileID: 6170267574808946472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5928705739001923221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 8c42175f47848be488c014c866726a93, type: 3}
+  m_PrefabInstance: {fileID: 6170267574808946472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1006736823172588511
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928705739001923221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc397254b3c3ac44e958dc1b4419722c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7701346621275108250
 PrefabInstance:
   m_ObjectHideFlags: 0

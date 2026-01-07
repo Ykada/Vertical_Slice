@@ -124,41 +124,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2184597360540724519, guid: a384f953c81428d4ebe668394f22735f, type: 3}
   m_PrefabInstance: {fileID: 419013529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &239517717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239517715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackStats
-  damageMods:
-  - 1
-  - 0.75
-  - 0.5
-  - 0.25
-  startTargets: 00000000000000000000000000000000
-  endTargets: 01000000020000000200000002000000
-  critAttacks:
-  - 0
-  - 5
-  - 1
-  - 0
-  debuffNames:
-  - 
-  - 
-  - 
-  - 
-  debuffChance:
-  - 0
-  - 0
-  - 0
-  - 0
-  accuracyAttacks: 5500000055000000550000005a000000
 --- !u!1 &348792308
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,19 +316,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5674390428075771004, guid: a384f953c81428d4ebe668394f22735f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1502363835}
-    - targetCorrespondingSourceObject: {fileID: 1077840132660933328, guid: a384f953c81428d4ebe668394f22735f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1255042414}
-    - targetCorrespondingSourceObject: {fileID: 1077840132660933328, guid: a384f953c81428d4ebe668394f22735f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1255042415}
-    - targetCorrespondingSourceObject: {fileID: 2184597360540724519, guid: a384f953c81428d4ebe668394f22735f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239517717}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a384f953c81428d4ebe668394f22735f, type: 3}
 --- !u!1001 &448765565
 PrefabInstance:
@@ -470,60 +423,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1077840132660933328, guid: a384f953c81428d4ebe668394f22735f, type: 3}
   m_PrefabInstance: {fileID: 419013529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1255042414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255042412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2716a8fc18ab34fafae67929aaa56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Highwayman
-  damageMods:
-  - 0.85
-  - 0.85
-  - 0.2
-  - 0.5
-  startTargets: 00000000010000000100000000000000
-  endTargets: 01000000020000000200000002000000
-  critAttacks:
-  - 0
-  - 7.5
-  - 0
-  - -9
-  debuffNames:
-  - Bleed
-  - 
-  - 
-  - 
-  debuffChance:
-  - 100
-  - 0
-  - 0
-  - 0
-  accuracyAttacks: 5f000000550000005f0000004b000000
---- !u!114 &1255042415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255042412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef5b77a962c53f49a648faff7cd1027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Highwayman
-  maxHp: 23
-  prot: 0
-  dodge: 10
-  spd: 5
-  accuracyMod: 0
-  crit: 5
-  damageRange: {x: 5, y: 10}
 --- !u!1 &1411835858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7275733213124054566, guid: a384f953c81428d4ebe668394f22735f, type: 3}
@@ -534,23 +433,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5674390428075771004, guid: a384f953c81428d4ebe668394f22735f, type: 3}
   m_PrefabInstance: {fileID: 419013529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1502363835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502363833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d1ca66e2bf22949a651fa66c912607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
-  maxHp: 23
-  prot: 0
-  dodge: 0
-  spd: 0
-  accMod: 0
 --- !u!1001 &1617435467
 PrefabInstance:
   m_ObjectHideFlags: 0

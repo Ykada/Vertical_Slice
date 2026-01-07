@@ -6,10 +6,10 @@ using UnityEngine;
 public class BaseHero : MonoBehaviour
 {   
     //flat stats 
-    [SerializeField] protected int maxHp, prot, dodge, spd, accuracyMod;
+    [SerializeField] protected int maxHp, prot, dodge, speed, accuracyMod;
     private int accuracyModAttack;
     //percentages
-    [SerializeField] protected float crit;
+    [SerializeField] protected float crit, stunRes, blightRes, diseaseRes, moveRes, bleedRes, debuffRes;
     private float tempCritAttack;
     //base damage range
     [SerializeField] protected Vector2 damageRange;
@@ -23,12 +23,29 @@ public class BaseHero : MonoBehaviour
     private string debuff;
     private float debuffAccuracy;
     private int currentHp;
+    private int battleProt;
+    private bool firstHeal = true;
+    //turn
+    private CurrentTurn turnsystem;
 
+    public bool FirstHeal
+    {
+        set {  firstHeal = value; }
+    }
     private void Start()
     {
+        resNameWithValue.Add("Stun", stunRes);
+        resNameWithValue.Add("Blight", blightRes);
+        resNameWithValue.Add("Disease", diseaseRes);
+        resNameWithValue.Add("Move", moveRes);
+        resNameWithValue.Add("Bleed", bleedRes);
+        resNameWithValue.Add("Debuff", debuffRes);
         currentHp = maxHp;
         Target.OnTargetSelected += DealDamage;
         Attacks.Stats += GetStats;
+        Attacks.Heal += HealDamage;
+        turnsystem = GameObject.FindGameObjectWithTag("Turnsystem").GetComponent<CurrentTurn>();
+        battleProt = prot;
     }
     public void TakeDamage(float accEnemy, int damageEnemy, string debuffName, float debuffAcc)
     {
@@ -44,7 +61,7 @@ public class BaseHero : MonoBehaviour
             return;
         }
         //damage - protection
-        currentHp -= (damageEnemy - prot);
+        currentHp -= (damageEnemy - battleProt);
         if (currentHp < 0 && !Deathsdoor) currentHp = 0;
         //bools goedzetten
         Deathsdoor = currentHp == 0;
@@ -62,26 +79,32 @@ public class BaseHero : MonoBehaviour
     }  
         
     
-    protected void HealDamage(int heal)
+    protected void HealDamage(float critHeal, int heal, string HealOrBuff)
     {
-        if (Dead) return;
-        if (currentHp >= maxHp) return;
-        //moet nog crit dmg berekenen
-        currentHp += heal;
+        if (!firstHeal) return;
+        firstHeal = false;
+        if (HealOrBuff != "Heal")
+        {
+            battleProt = 20;
+            Debug.Log(battleProt);
+            turnsystem.EndTurn();
+            return;
+        }
+        int critCheck = Random.Range(1, 100);
+        if (critHeal + crit >= critCheck) heal = heal* 2; 
+            currentHp += heal;
         if (currentHp > maxHp) currentHp = maxHp;
+        turnsystem.EndTurn();
     }
 
     protected void DealDamage(GameObject target)
     {
         if (Dead) return;
         int critCheck = Random.Range(1, 100);
-        if (tempCritAttack >= critCheck)
-        {
-            damageRangeAttack = new Vector2(damageRangeAttack.x * 2, damageRangeAttack.y * 2);
-        }
+        if (tempCritAttack >= critCheck) damageRangeAttack = new Vector2(damageRangeAttack.x * 2, damageRangeAttack.y * 2);
         int damageAttack = Random.Range(Mathf.CeilToInt(damageRangeAttack.x), Mathf.CeilToInt(damageRangeAttack.y));
         target.GetComponent<BaseEnemy>().TakeDamage(accuracyModAttack, damageAttack, debuff, debuffAccuracy);
-        Debug.Log(accuracyModAttack);
+        turnsystem.EndTurn();
     }
     
     private void GetStats(float critAttack, float damage, int accuracyAttack, string debuffName, float debuffChance)

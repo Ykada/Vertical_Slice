@@ -18,6 +18,7 @@ public class AttackStats : MonoBehaviour
     private void Start()
     {
         selectAttack = GameObject.Find("SelectAttack").GetComponent<SelectAttack>();
+        this.enabled = false;
     }
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class AttackStats : MonoBehaviour
     }
     private void SetStats()
     {
+        gameObject.GetComponent<BaseHero>().FirstHeal = true; 
         //attack 1
         Attacks temp = selectAttack.Buttons[0].GetComponent<Attacks>();
         temp.DamageMod = damageMods[0];

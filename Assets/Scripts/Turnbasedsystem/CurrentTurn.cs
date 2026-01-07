@@ -31,27 +31,21 @@ public class CurrentTurn : MonoBehaviour
 
     private void Update()
     {
-
         // Only update if queue needs filling
-        if (turnQueue.Count < 5)
+        if (turnQueue.Count < playersInGame.Count)
         {
             UpdateActionBars();
-            addopponenttoceue(stats[1]);
-            UpdateUI();
         };
-        
-        
     }
 
-    /// <summary>
-    /// Increases action values and assigns units to the turn queue.
-    /// </summary>
+    /* <summary>
+     Increases action values and assigns units to the turn queue.
+     </summary>*/
     private void UpdateActionBars()
     {
         foreach (UnitStats unit in stats)
         {
-            unit.actionValue += unit.speed * Time.deltaTime;
-
+            unit.actionValue += unit.Speed;
             bool thresholdReached = unit.actionValue >= threshold;
             bool notAlreadyQueued = !turnQueue.Contains(unit);
 
@@ -60,62 +54,40 @@ public class CurrentTurn : MonoBehaviour
                 turnQueue.Add(unit);
 
                 // Refresh UI when the queue fills
-                if (turnQueue.Count == 5)
+                if (turnQueue.Count == playersInGame.Count)
                     UpdateUI();
             }
         }
     }
 
-    /// <summary>
-    /// Updates the next 5 turn indicators in UI.
-    /// </summary>
+    /* <summary>
+    Updates the next 5 turn indicators in UI.
+    </summary>*/
     private void UpdateUI()
     {
         for (int i = 0; i < turnLabels.Length; i++)
         {
             if (i < turnQueue.Count)
-                turnLabels[i].text = turnQueue[i].characterName;
+                { turnLabels[i].text = turnQueue[i].CharacterName; }
             else
                 turnLabels[i].text = "";
         }
+        turnQueue[0].GetComponent<AttackStats>().enabled = true;
     }
 
-    /// <summary>
-    /// Called when the current acting unit finishes its turn.
-    /// </summary>
+    /* <summary>
+     Called when the current acting unit finishes its turn.
+     </summary>*/
     public void EndTurn()
     {
-        if (turnQueue.Count == 0)
+        if (turnQueue.Count == 3)
             return;
 
         // Reset first unit's action bar
         UnitStats finishedUnit = turnQueue[0];
         finishedUnit.actionValue = 0;
-
+        finishedUnit.GetComponent<AttackStats>().enabled = false;
         // Remove from queue
         turnQueue.RemoveAt(0);
-
-        // Update display immediately
-        UpdateUI();
-
-        addopponenttoceue(stats[1]);
-        addopponenttoceue(stats[2]);
-        addopponenttoceue(stats[3]);
-        addopponenttoceue(stats[4]);
-        addopponenttoceue(stats[5]);
-    }
-    private void addopponenttoceue(UnitStats opponent)
-    {
-        bool thresholdReached = opponent.actionValue >= threshold;
-        bool notAlreadyQueued = !turnQueue.Contains(opponent);
-
-        if (thresholdReached && notAlreadyQueued)
-        {
-            turnQueue.Add(opponent);
-
-            // Refresh UI when the queue fills
-            if (turnQueue.Count == 5)
-                UpdateUI();
-        }
     }
 }

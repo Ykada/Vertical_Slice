@@ -26,7 +26,8 @@ public class BaseEnemy : MonoBehaviour
         //Alleen voor heroes Enemies hebben een dead state
         if (dead) return;
         //hit berekening
-        float hitChance = (dodge - accEnemy) + 10;
+        float hitChance = (dodge - accEnemy) +10;
+        if (hitChance < 0) hitChance = 10;
         Debug.Log(hitChance);
         int hitCheck = Random.Range(1, 100);
         if (hitChance >= hitCheck)

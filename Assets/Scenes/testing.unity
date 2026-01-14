@@ -148,6 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 0
+  prot: 0
+  dodge: 0
+  spd: 0
+  accuracyMod: 0
+  crit: 0
+  stunRes: 0
+  blightRes: 0
+  diseaseRes: 0
+  moveRes: 0
+  bleedRes: 0
+  debuffRes: 0
+  damageRange: {x: 0, y: 0}
   characterName: player4
   speed: 1
   actionValue: 0
@@ -195,6 +208,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 0
+  prot: 0
+  dodge: 0
+  spd: 0
+  accuracyMod: 0
+  crit: 0
+  stunRes: 0
+  blightRes: 0
+  diseaseRes: 0
+  moveRes: 0
+  bleedRes: 0
+  debuffRes: 0
+  damageRange: {x: 0, y: 0}
   characterName: player3
   speed: 1
   actionValue: 0
@@ -572,6 +598,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 0
+  prot: 0
+  dodge: 0
+  spd: 0
+  accuracyMod: 0
+  crit: 0
+  stunRes: 0
+  blightRes: 0
+  diseaseRes: 0
+  moveRes: 0
+  bleedRes: 0
+  debuffRes: 0
+  damageRange: {x: 0, y: 0}
   characterName: player2
   speed: 2
   actionValue: 0
@@ -619,6 +658,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0ae62214a296146ab7ee1f69bd355c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
+  maxHp: 0
+  prot: 0
+  dodge: 0
+  spd: 0
+  accuracyMod: 0
+  crit: 0
+  stunRes: 0
+  blightRes: 0
+  diseaseRes: 0
+  moveRes: 0
+  bleedRes: 0
+  debuffRes: 0
+  damageRange: {x: 0, y: 0}
   characterName: player1
   speed: 1
   actionValue: 0
@@ -884,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 2546546908181821756}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: playersInGame.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 328158696584906675, guid: c8f6b3a1ef947ca45aa109795d1d870b, type: 3}
       propertyPath: 'turnLabels.Array.data[0]'

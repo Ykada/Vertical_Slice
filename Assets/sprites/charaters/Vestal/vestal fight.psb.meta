@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9bc987f67a10bc41aedd587cd7710aa
+guid: 9ef5da5241455484fba60f3002bba1f5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -30,12 +30,12 @@ ScriptedImporter:
     ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
-    spriteMode: 1
+    spriteMode: 2
     spriteExtrude: 1
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 150
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -50,7 +50,7 @@ ScriptedImporter:
     flipbookColumns: 0
     ignorePngGamma: 0
     cookieMode: 0
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -83,7 +83,7 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    spriteID: e0415dedf452c5b48bbb74d5bd3ee768
+    spriteID: 8ad46ebde76e681459b1413c8de3b55f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -95,7 +95,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Layer 0
+  - name: Layer 4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -105,9 +105,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 3840
-      height: 5000
-    spriteID: 5548ff5b4b0e1ad46afc8e2b2bd6aa75
+      width: 630
+      height: 580
+    spriteID: 2a5584fec58e20c40b03fecf4a02273e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -188,12 +188,12 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Layer 0
-    spriteName: Layer 0
+  - name: Layer 4
+    spriteName: Layer 4
     isGroup: 0
     parentIndex: -1
-    spriteID: 5548ff5b4b0e1ad46afc8e2b2bd6aa75
-    layerID: 14
+    spriteID: 2a5584fec58e20c40b03fecf4a02273e
+    layerID: 5
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1

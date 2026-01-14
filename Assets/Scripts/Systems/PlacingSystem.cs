@@ -20,13 +20,12 @@ public class PlacingSystem : MonoBehaviour
             return enemyPrefabs;
         }
     }
-    private void Start()
+    private void Awake()
     {
         Placing();
         foreach (GameObject enemy in enemyPrefabs)
         {
             enemy.AddComponent<Target>();
-            
         }
     }
     private void Placing()

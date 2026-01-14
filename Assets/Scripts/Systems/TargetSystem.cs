@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TargetSystem : MonoBehaviour
@@ -19,7 +20,7 @@ public class TargetSystem : MonoBehaviour
         {
             target.GetComponent<Target>().AvailableTarget = false;
         }
-        for (int i = startRange; i < endRange + 1; i++)
+        for (int i = startRange; i < endRange+1; i++)
         {
             targets.Add(gameObject.GetComponent<PlacingSystem>().EnemyPrefabs[i]);
             targets[i].GetComponent<Target>().AvailableTarget = true;
@@ -44,22 +45,28 @@ public class Target : TargetSystem
     }
     private void Start()
     {
-
+      
     }
     private void OnMouseOver()
     {
         if (!availableTarget)return;
-        Debug.Log(gameObject.name);
+
     }
     private void OnMouseExit()
     {
         if (!availableTarget)return;
-        Debug.Log("exited: " +gameObject.name);
+
     }
     private void OnMouseDown()
     {
         if (!availableTarget) return;
         Debug.Log(gameObject.name + " selected");
+
+
         OnTargetSelected?.Invoke(gameObject);
+    }
+    private void changeBack()
+    {
+ 
     }
 }

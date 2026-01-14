@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Turnsystem
+  - artist test
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - pad
+  - charaters
+  - UI
   - 
   - 
   - 
@@ -42,6 +43,18 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 21034619
+    locked: 0
+  - name: pad
+    uniqueID: 1406471749
+    locked: 0
+  - name: charaters
+    uniqueID: 1948854259
+    locked: 0
+  - name: UI
+    uniqueID: 969736817
     locked: 0
   m_RenderingLayers:
   - Default

@@ -24,7 +24,10 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button StartGameButten; // Saves the text and switches to nieuw scene
     [SerializeField] private InputField SaveGametext1;
     [SerializeField] private InputField SaveGametext2;
-    
+
+    [Header("transform of objects")]
+    [SerializeField] private Transform Backgroundimage;
+    [SerializeField] private Transform[] othertransforms;
 
     private string savefilepath;
 
@@ -37,6 +40,14 @@ public class MainMenuUI : MonoBehaviour
         {
             CampainstartCanvas.SetActive(false);
             savingCanvas.SetActive(true);
+            Backgroundimage.transform.position = new Vector3(1955, 650, 0);
+            othertransforms[0].transform.position = new Vector3(1955, 650, 0);
+            othertransforms[1].transform.position = new Vector3(1955, 0, 0);
+            othertransforms[2].transform.position = new Vector3(1955, -50, 0);
+            othertransforms[3].transform.position = new Vector3(1955, -50, 0);
+            othertransforms[4].transform.position = new Vector3(1955, -50, 0);
+
+
         });
         StartGameButten.onClick.AddListener(() =>
         {

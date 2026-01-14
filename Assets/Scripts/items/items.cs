@@ -63,7 +63,6 @@ public class Items : MonoBehaviour
     {
         animationbottle.SetActive(true);
         Debug.Log("holy water used");
-
         number.gameObject.SetActive(false);
     }
 }

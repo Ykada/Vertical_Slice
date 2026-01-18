@@ -41,11 +41,12 @@ public class MainMenuUI : MonoBehaviour
             CampainstartCanvas.SetActive(false);
             savingCanvas.SetActive(true);
             Backgroundimage.transform.position = new Vector3(1955, 950, 0);
-            othertransforms[0].transform.position = new Vector3(1955, 650, 0);
-            othertransforms[1].transform.position = new Vector3(1955, 0, 0);
-            othertransforms[2].transform.position = new Vector3(1955, -50, 0);
-            othertransforms[3].transform.position = new Vector3(1955, -50, 0);
-            othertransforms[4].transform.position = new Vector3(1955, -50, 0);
+            othertransforms[0].transform.position = new Vector3(1955, 1050, 0);
+            othertransforms[1].transform.position = new Vector3(1955, 850, 0);
+            othertransforms[2].transform.position = new Vector3(1955, 750, 0);
+            othertransforms[3].transform.position = new Vector3(1955, 850, 0);
+            othertransforms[4].transform.position = new Vector3(1955, 750, 0);
+            othertransforms[5].transform.position = new Vector3(1955, 950, 0);
 
 
         });

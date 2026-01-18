@@ -28,6 +28,10 @@ public class PlacingSystem : MonoBehaviour
             enemy.AddComponent<Target>();
         }
     }
+    private void Start()
+    {
+        BaseUnit.OnUnitDeath += OnPositionChange;
+    }
     private void Placing()
     {
         int i = 0;
@@ -69,10 +73,9 @@ public class PlacingSystem : MonoBehaviour
             MoveLeftorRightHero(1);
             return;
         }
-        if (!TargetOfChange.activeInHierarchy)
+        if (TargetOfChange.GetComponent<BaseUnit>().Dead)
         {
             enemyPrefabs.Remove(TargetOfChange);
-            enemyPrefabs.Sort();
             Placing();
             return;
         }

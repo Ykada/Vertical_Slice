@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class BaseHero : MonoBehaviour
+public class BaseUnit : MonoBehaviour
 {   
     //flat stats 
     [SerializeField] protected int maxHp, prot, dodge, speed, accuracyMod;
@@ -17,20 +19,36 @@ public class BaseHero : MonoBehaviour
     //resistances
     protected SortedList<string, float> resNameWithValue = new SortedList<string, float>();
     //dood of niet
-    private bool Dead = false;
-    private bool Deathsdoor = false;
+    private bool dead = false;
+    private bool deathsdoor = false;
+    private bool corpse = false;
     //HpCounter
     private string debuff;
     private float debuffAccuracy;
     private int currentHp;
     private int battleProt;
-    private bool firstHeal = true;
+    private static bool firstAction = true;
+    private static bool dealtDamage = false;
+    private int damageAttack;
     //turn
     private CurrentTurn turnsystem;
+    public static event Action<GameObject, string, GameObject> OnUnitDeath;
 
-    public bool FirstHeal
+    public bool DealtDamage
     {
-        set {  firstHeal = value; }
+        set { dealtDamage = value; }
+    }
+    public bool Corpse
+    {
+        get { return corpse; }
+    }
+    public bool Dead
+    {
+        get { return dead; }
+    }
+    public bool FirstAction
+    {
+        set {  firstAction = value; }
     }
     private void Start()
     {
@@ -42,17 +60,20 @@ public class BaseHero : MonoBehaviour
         resNameWithValue.Add("Debuff", debuffRes);
         currentHp = maxHp;
         Target.OnTargetSelected += DealDamage;
-        Attacks.Stats += GetStats;
         Attacks.Heal += HealDamage;
         turnsystem = GameObject.FindGameObjectWithTag("Turnsystem").GetComponent<CurrentTurn>();
         battleProt = prot;
     }
-    public void TakeDamage(float accEnemy, int damageEnemy, string debuffName, float debuffAcc)
+    public void TakeDamage(float accEnemy, int damageEnemy, string debuffName, float debuffAcc, GameObject caster)
     {
         //Alleen voor heroes Enemies hebben een dead state
         if (Dead) return;
         //hit berekening
-        float hitChance = accEnemy - dodge + 10;
+        float hitChance = (dodge - accEnemy) + 10;
+        if (hitChance <= 0)
+        {
+            hitChance = 10;
+        }
         Debug.Log(hitChance);
         int hitCheck = Random.Range(1, 100);
         if (hitChance >= hitCheck)
@@ -62,18 +83,28 @@ public class BaseHero : MonoBehaviour
         }
         //damage - protection
         currentHp -= (damageEnemy - battleProt);
-        if (currentHp < 0 && !Deathsdoor) currentHp = 0;
+        if (currentHp < 0 && !deathsdoor && !corpse) currentHp = 0;
         //bools goedzetten
-        Deathsdoor = currentHp == 0;
-        Dead = currentHp < 0;
-        if (Dead) Destroy(gameObject);
+        deathsdoor = currentHp == 0;
+        if (gameObject.CompareTag("Enemy") && deathsdoor)
+        {
+            corpse = true;
+            currentHp = 10;
+        }
+        Debug.Log(currentHp);
+        dead = currentHp < 0;
+        if (Dead)
+        {   
+            OnUnitDeath?.Invoke(caster, null, gameObject);
+            Destroy(gameObject);
+        }
         //debuffs
-        if (debuffName == null) return;
+        /*if (debuffName == null) return;
         int index = resNameWithValue.IndexOfKey(debuffName);
         float debuffHitChance = debuffAcc - resNameWithValue.Values[index];
         Debug.Log(debuffHitChance);
         int debuffCheck = Random.Range(1, 100);
-        if (debuffHitChance < debuffCheck) return;
+        if (debuffHitChance < debuffCheck) return;*/
         Debug.Log(debuffName);
         //apply debuff??
     }  
@@ -81,8 +112,8 @@ public class BaseHero : MonoBehaviour
     
     protected void HealDamage(float critHeal, int heal, string HealOrBuff)
     {
-        if (!firstHeal) return;
-        firstHeal = false;
+        if (!firstAction) return;
+        firstAction = false;
         if (HealOrBuff != "Heal")
         {
             battleProt = 20;
@@ -97,22 +128,22 @@ public class BaseHero : MonoBehaviour
         turnsystem.EndTurn();
     }
 
-    protected void DealDamage(GameObject target)
-    {
-        if (Dead) return;
-        int critCheck = Random.Range(1, 100);
-        if (tempCritAttack >= critCheck) damageRangeAttack = new Vector2(damageRangeAttack.x * 2, damageRangeAttack.y * 2);
-        int damageAttack = Random.Range(Mathf.CeilToInt(damageRangeAttack.x), Mathf.CeilToInt(damageRangeAttack.y));
-        target.GetComponent<BaseEnemy>().TakeDamage(accuracyModAttack, damageAttack, debuff, debuffAccuracy);
-        turnsystem.EndTurn();
-    }
-    
-    private void GetStats(float critAttack, float damage, int accuracyAttack, string debuffName, float debuffChance)
-    {
+    protected void DealDamage(GameObject target, float critAttack, float damage, int accuracyAttack, string debuffName, float debuffChance)
+    { 
+        if (damageRange.y == 0) return;
         tempCritAttack = crit + critAttack;
-        damageRangeAttack = new Vector2(damageRange.x * damage, damageRange.y * damage);
         accuracyModAttack = accuracyMod + accuracyAttack;
         debuff = debuffName;
         debuffAccuracy = debuffChance;
+        if (!firstAction) return;
+        firstAction = false;
+        if (Dead) return;
+        int critCheck = Random.Range(1, 100);
+        Vector2 tempDamageRangeAttack = new Vector2(damageRange.x * damage, damageRange.y * damage);
+        if (tempCritAttack >= critCheck) tempDamageRangeAttack = new Vector2(damageRangeAttack.x * 2, damageRangeAttack.y * 2);
+        damageAttack = Random.Range(Mathf.CeilToInt(tempDamageRangeAttack.x), Mathf.CeilToInt(tempDamageRangeAttack.y));
+        Debug.Log(damageAttack);
+        target.GetComponent<BaseUnit>().TakeDamage(accuracyModAttack, damageAttack, debuff, debuffAccuracy, gameObject);
+        turnsystem.EndTurn();
     }
 }

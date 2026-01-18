@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class UnitStats : BaseHero
+public class UnitStats : BaseUnit
 {
     [SerializeField] private string characterName;
 

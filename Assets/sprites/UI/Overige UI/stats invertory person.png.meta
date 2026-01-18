@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: 11211b8b1e250a644980c8ce1a8c5943
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7201519083517755089
+    second: stats invertory person_0
+  - first:
+      213: -6526453932188059879
+    second: stats invertory person_1
+  - first:
+      213: 2518539987064829019
+    second: stats invertory person_2
+  - first:
+      213: 4482560829841085868
+    second: stats invertory person_3
+  - first:
+      213: 7503217156611133216
+    second: stats invertory person_4
+  - first:
+      213: 6253302662646260808
+    second: stats invertory person_5
+  - first:
+      213: -4748153487656543300
+    second: stats invertory person_6
+  - first:
+      213: -8979666888862535236
+    second: stats invertory person_7
+  - first:
+      213: 2035973436368609336
+    second: stats invertory person_8
+  - first:
+      213: -8412921432668597730
+    second: stats invertory person_9
+  - first:
+      213: -3455356761940607226
+    second: stats invertory person_10
+  - first:
+      213: -6630752867781727617
+    second: stats invertory person_11
+  - first:
+      213: -7013816714302925286
+    second: stats invertory person_12
+  - first:
+      213: -8844324535839909658
+    second: stats invertory person_13
+  - first:
+      213: -587443177168830387
+    second: stats invertory person_14
+  - first:
+      213: -5864590477497525014
+    second: stats invertory person_15
+  - first:
+      213: 4567316402722037240
+    second: stats invertory person_16
+  - first:
+      213: -2880092574671131822
+    second: stats invertory person_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stats invertory person_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 47
+        width: 199
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 917baf03ab06d65a0800000000000000
+      internalID: -6526453932188059879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stats invertory person_17
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 53
+        width: 123
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bac7e001bd708d0800000000000000
+      internalID: -2880092574671131822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9385f14900564bd47ac5d4d2c99db798
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stats invertory person_0: -7201519083517755089
+      stats invertory person_1: -6526453932188059879
+      stats invertory person_10: -3455356761940607226
+      stats invertory person_11: -6630752867781727617
+      stats invertory person_12: -7013816714302925286
+      stats invertory person_13: -8844324535839909658
+      stats invertory person_14: -587443177168830387
+      stats invertory person_15: -5864590477497525014
+      stats invertory person_16: 4567316402722037240
+      stats invertory person_17: -2880092574671131822
+      stats invertory person_2: 2518539987064829019
+      stats invertory person_3: 4482560829841085868
+      stats invertory person_4: 7503217156611133216
+      stats invertory person_5: 6253302662646260808
+      stats invertory person_6: -4748153487656543300
+      stats invertory person_7: -8979666888862535236
+      stats invertory person_8: 2035973436368609336
+      stats invertory person_9: -8412921432668597730
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

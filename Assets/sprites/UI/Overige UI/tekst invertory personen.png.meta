@@ -1,0 +1,339 @@
+fileFormatVersion: 2
+guid: 3f452083801669e49a8c8bdc33b99863
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7373660195226079887
+    second: tekst invertory personen_0
+  - first:
+      213: 4104413043959503769
+    second: tekst invertory personen_1
+  - first:
+      213: -7054440973925375544
+    second: tekst invertory personen_2
+  - first:
+      213: 871534978519538943
+    second: tekst invertory personen_3
+  - first:
+      213: 8119212476125396134
+    second: tekst invertory personen_4
+  - first:
+      213: 3232299655325535536
+    second: tekst invertory personen_5
+  - first:
+      213: -7594729274717007404
+    second: tekst invertory personen_6
+  - first:
+      213: -7269946488758575508
+    second: tekst invertory personen_7
+  - first:
+      213: -9070530497120053153
+    second: tekst invertory personen_8
+  - first:
+      213: 2928386534598105558
+    second: tekst invertory personen_9
+  - first:
+      213: -4872865277824990433
+    second: tekst invertory personen_10
+  - first:
+      213: 3594873741323926222
+    second: tekst invertory personen_11
+  - first:
+      213: 6519450186427344278
+    second: tekst invertory personen_12
+  - first:
+      213: -7335964136690260125
+    second: tekst invertory personen_13
+  - first:
+      213: 8120562699102170086
+    second: tekst invertory personen_14
+  - first:
+      213: 4557932368759687326
+    second: tekst invertory personen_15
+  - first:
+      213: 3076720651392732545
+    second: tekst invertory personen_16
+  - first:
+      213: 7002324970581663944
+    second: tekst invertory personen_17
+  - first:
+      213: 8994961863026232769
+    second: tekst invertory personen_18
+  - first:
+      213: -8867111093847826862
+    second: tekst invertory personen_19
+  - first:
+      213: 5648567800188161194
+    second: tekst invertory personen_20
+  - first:
+      213: -200688352456322057
+    second: tekst invertory personen_21
+  - first:
+      213: -9046770856734181778
+    second: tekst invertory personen_22
+  - first:
+      213: -5882750952993798644
+    second: tekst invertory personen_23
+  - first:
+      213: 561966622146191071
+    second: tekst invertory personen_24
+  - first:
+      213: 2650692917330601890
+    second: tekst invertory personen_25
+  - first:
+      213: 7916741878749128630
+    second: tekst invertory personen_26
+  - first:
+      213: -7841256215068651686
+    second: tekst invertory personen_27
+  - first:
+      213: -4510806614690391371
+    second: tekst invertory personen_28
+  - first:
+      213: -7056201264459008075
+    second: tekst invertory personen_29
+  - first:
+      213: 8228350491259342243
+    second: tekst invertory personen_30
+  - first:
+      213: 2493941678122649116
+    second: tekst invertory personen_31
+  - first:
+      213: 3625426055394381010
+    second: tekst invertory personen_32
+  - first:
+      213: 7787461821222003000
+    second: tekst invertory personen_33
+  - first:
+      213: 4488260318458010638
+    second: tekst invertory personen_34
+  - first:
+      213: 6661427473892895884
+    second: tekst invertory personen_35
+  - first:
+      213: 8089916710123422396
+    second: tekst invertory personen_36
+  - first:
+      213: -2081791476431768588
+    second: tekst invertory personen_37
+  - first:
+      213: 6995333174420967902
+    second: tekst invertory personen_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tekst invertory personen_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 950
+        width: 235
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acbf57cabc3da070800000000000000
+      internalID: 8119212476125396134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tekst invertory personen_27
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 484
+        width: 344
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f420464034e2390800000000000000
+      internalID: -7841256215068651686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tekst invertory personen_38
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 69
+        width: 180
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed11ed2957a641160800000000000000
+      internalID: 6995333174420967902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5cf7fa6562478da45b1f276969104e2d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tekst invertory personen_0: -7373660195226079887
+      tekst invertory personen_1: 4104413043959503769
+      tekst invertory personen_10: -4872865277824990433
+      tekst invertory personen_11: 3594873741323926222
+      tekst invertory personen_12: 6519450186427344278
+      tekst invertory personen_13: -7335964136690260125
+      tekst invertory personen_14: 8120562699102170086
+      tekst invertory personen_15: 4557932368759687326
+      tekst invertory personen_16: 3076720651392732545
+      tekst invertory personen_17: 7002324970581663944
+      tekst invertory personen_18: 8994961863026232769
+      tekst invertory personen_19: -8867111093847826862
+      tekst invertory personen_2: -7054440973925375544
+      tekst invertory personen_20: 5648567800188161194
+      tekst invertory personen_21: -200688352456322057
+      tekst invertory personen_22: -9046770856734181778
+      tekst invertory personen_23: -5882750952993798644
+      tekst invertory personen_24: 561966622146191071
+      tekst invertory personen_25: 2650692917330601890
+      tekst invertory personen_26: 7916741878749128630
+      tekst invertory personen_27: -7841256215068651686
+      tekst invertory personen_28: -4510806614690391371
+      tekst invertory personen_29: -7056201264459008075
+      tekst invertory personen_3: 871534978519538943
+      tekst invertory personen_30: 8228350491259342243
+      tekst invertory personen_31: 2493941678122649116
+      tekst invertory personen_32: 3625426055394381010
+      tekst invertory personen_33: 7787461821222003000
+      tekst invertory personen_34: 4488260318458010638
+      tekst invertory personen_35: 6661427473892895884
+      tekst invertory personen_36: 8089916710123422396
+      tekst invertory personen_37: -2081791476431768588
+      tekst invertory personen_38: 6995333174420967902
+      tekst invertory personen_4: 8119212476125396134
+      tekst invertory personen_5: 3232299655325535536
+      tekst invertory personen_6: -7594729274717007404
+      tekst invertory personen_7: -7269946488758575508
+      tekst invertory personen_8: -9070530497120053153
+      tekst invertory personen_9: 2928386534598105558
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

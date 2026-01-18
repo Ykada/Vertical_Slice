@@ -5,7 +5,12 @@ public class Items : MonoBehaviour
 {
     [SerializeField] private List<GameObject> itemList = new List<GameObject>();
 
-    // These functions will be triggered by UI button clicks
+    [SerializeField] private GameObject animationbottle;
+
+    void Start()
+    {
+        animationbottle.SetActive(false);
+    }
 
     public void UseShovel()
     {
@@ -19,7 +24,7 @@ public class Items : MonoBehaviour
 
     public void UseHolyWater()
     {
-        Debug.Log("healholywata");
+        useHolyWater();
     }
 
     public void UseAntivenom()
@@ -45,5 +50,13 @@ public class Items : MonoBehaviour
     public void UseFood()
     {
         Debug.Log("no more hungry");
+    }
+
+    void useHolyWater()
+    {
+        animationbottle.SetActive(true);
+        Debug.Log("holy water used");
+
+
     }
 }

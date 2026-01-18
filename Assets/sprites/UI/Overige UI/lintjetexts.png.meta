@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: c9d79664545689b46a40c82dd7648787
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7095941026867741402
+    second: lintjetexts_0
+  - first:
+      213: 7127788593512268011
+    second: lintjetexts_1
+  - first:
+      213: 2888449819918493663
+    second: lintjetexts_2
+  - first:
+      213: -589023258723630828
+    second: lintjetexts_3
+  - first:
+      213: -1316789515324250583
+    second: lintjetexts_4
+  - first:
+      213: -5516509228642833251
+    second: lintjetexts_5
+  - first:
+      213: 5667092120676064807
+    second: lintjetexts_6
+  - first:
+      213: 7926093583015968966
+    second: lintjetexts_7
+  - first:
+      213: -3552490218168651263
+    second: lintjetexts_8
+  - first:
+      213: 4117562584923922847
+    second: lintjetexts_9
+  - first:
+      213: 9086214727283462231
+    second: lintjetexts_10
+  - first:
+      213: 3895891061464416169
+    second: lintjetexts_11
+  - first:
+      213: -1818364570637524206
+    second: lintjetexts_12
+  - first:
+      213: -8103162936896928795
+    second: lintjetexts_13
+  - first:
+      213: -764010902494264302
+    second: lintjetexts_14
+  - first:
+      213: 450598151823983925
+    second: lintjetexts_15
+  - first:
+      213: -5439461049558178662
+    second: lintjetexts_16
+  - first:
+      213: -2157880024532323141
+    second: lintjetexts_17
+  - first:
+      213: -8938271280978569708
+    second: lintjetexts_18
+  - first:
+      213: 5899470441336474853
+    second: lintjetexts_19
+  - first:
+      213: 9045531607393663326
+    second: lintjetexts_20
+  - first:
+      213: -3338145457543138386
+    second: lintjetexts_21
+  - first:
+      213: -496820229113552078
+    second: lintjetexts_22
+  - first:
+      213: -742443279797080567
+    second: lintjetexts_23
+  - first:
+      213: 5716926615007841905
+    second: lintjetexts_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lintjetexts_23
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 10
+        width: 1112
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ea1d945cf42b5f0800000000000000
+      internalID: -742443279797080567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c9c42c27b299ebd4f906d0ff75c9c3dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lintjetexts_0: 7095941026867741402
+      lintjetexts_1: 7127788593512268011
+      lintjetexts_10: 9086214727283462231
+      lintjetexts_11: 3895891061464416169
+      lintjetexts_12: -1818364570637524206
+      lintjetexts_13: -8103162936896928795
+      lintjetexts_14: -764010902494264302
+      lintjetexts_15: 450598151823983925
+      lintjetexts_16: -5439461049558178662
+      lintjetexts_17: -2157880024532323141
+      lintjetexts_18: -8938271280978569708
+      lintjetexts_19: 5899470441336474853
+      lintjetexts_2: 2888449819918493663
+      lintjetexts_20: 9045531607393663326
+      lintjetexts_21: -3338145457543138386
+      lintjetexts_22: -496820229113552078
+      lintjetexts_23: -742443279797080567
+      lintjetexts_24: 5716926615007841905
+      lintjetexts_3: -589023258723630828
+      lintjetexts_4: -1316789515324250583
+      lintjetexts_5: -5516509228642833251
+      lintjetexts_6: 5667092120676064807
+      lintjetexts_7: 7926093583015968966
+      lintjetexts_8: -3552490218168651263
+      lintjetexts_9: 4117562584923922847
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

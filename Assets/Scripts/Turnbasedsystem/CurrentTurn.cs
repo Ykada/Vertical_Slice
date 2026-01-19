@@ -77,6 +77,7 @@ public class CurrentTurn : MonoBehaviour
             turnQueue[0].GetComponent<AttackStats>().enabled = true;
             return;
         }
+        if (turnQueue[0].CompareTag("Enemy"))
         turnQueue[0].GetComponent<EnemyBehavior>().enabled = true;
     }
 

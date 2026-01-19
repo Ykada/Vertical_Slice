@@ -60,6 +60,7 @@ public class BaseUnit : MonoBehaviour
         resNameWithValue.Add("Debuff", debuffRes);
         currentHp = maxHp;
         Target.OnTargetSelected += DealDamage;
+        EnemyBehavior.OnTargetSelected += DealDamage;
         Attacks.Heal += HealDamage;
         turnsystem = GameObject.FindGameObjectWithTag("Turnsystem").GetComponent<CurrentTurn>();
         battleProt = prot;

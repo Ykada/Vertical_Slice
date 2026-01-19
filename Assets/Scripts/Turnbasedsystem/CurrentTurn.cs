@@ -72,7 +72,12 @@ public class CurrentTurn : MonoBehaviour
             else
                 turnLabels[i].text = "";
         }
-        turnQueue[0].GetComponent<AttackStats>().enabled = true;
+        if (turnQueue[0].CompareTag("Player"))
+        {
+            turnQueue[0].GetComponent<AttackStats>().enabled = true;
+            return;
+        }
+        turnQueue[0].GetComponent<EnemyBehavior>().enabled = true;
     }
 
     /* <summary>
@@ -86,7 +91,14 @@ public class CurrentTurn : MonoBehaviour
         // Reset first unit's action bar
         UnitStats finishedUnit = turnQueue[0];
         finishedUnit.actionValue = 0;
-        finishedUnit.GetComponent<AttackStats>().enabled = false;
+        if (finishedUnit.CompareTag("Player"))
+        {
+            finishedUnit.GetComponent<AttackStats>().enabled = false;
+        }
+        else
+        {
+            finishedUnit.GetComponent<EnemyBehavior>().enabled = false;
+        }
         // Remove from queue
         turnQueue.RemoveAt(0);
     }

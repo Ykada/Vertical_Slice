@@ -20,6 +20,13 @@ public class PlacingSystem : MonoBehaviour
             return enemyPrefabs;
         }
     }
+    public List<GameObject> HeroPrefabs
+    {
+        get
+        {
+            return heroPrefabs;
+        }
+    }
     private void Awake()
     {
         Placing();

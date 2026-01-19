@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class BaseUnit : MonoBehaviour
@@ -33,6 +34,7 @@ public class BaseUnit : MonoBehaviour
     //turn
     private CurrentTurn turnsystem;
     public static event Action<GameObject, string, GameObject> OnUnitDeath;
+    public Slider HpSlider;
 
     public bool DealtDamage
     {
@@ -107,6 +109,8 @@ public class BaseUnit : MonoBehaviour
         if (debuffHitChance < debuffCheck) return;*/
         //Debug.Log(debuffName);
         //apply debuff??
+
+        HpSlider.value = (float)currentHp / maxHp;
     }  
         
     

@@ -24,7 +24,7 @@ public class CurrentTurn : MonoBehaviour
             if (unit != null)
                 stats.Add(unit);
         }
-
+        BaseUnit.OnUnitDeath += RemoveFromQueue;
         Debug.Log("Initialized Turn Queue System");
         UpdateActionBars();
     }
@@ -102,5 +102,11 @@ public class CurrentTurn : MonoBehaviour
         }
         // Remove from queue
         turnQueue.RemoveAt(0);
+    }
+    private void RemoveFromQueue(GameObject sideOfNoChange, string whatWay, GameObject TargetOfChange)
+    {
+        playersInGame.Remove(TargetOfChange);
+        turnQueue.Remove(TargetOfChange.GetComponent<UnitStats>());
+        stats.Remove(TargetOfChange.GetComponent<UnitStats>());
     }
 }

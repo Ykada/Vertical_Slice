@@ -16,22 +16,29 @@ public class TargetSystem : MonoBehaviour
     private void GetTargets(int startRange, int endRange)
     {
         targets.AddRange(gameObject.GetComponent<PlacingSystem>().EnemyPrefabs);
-        if (targets.Count == endRange)
+        if (targets[startRange] == null)
+        {
+            targets.Clear();
+            targets.AddRange(gameObject.GetComponent<PlacingSystem>().EnemyPrefabs);
+        }
+        if (targets.Count <= endRange)
         {
             endRange = targets.Count -1;
+            
         }
         for (int i = startRange; i < endRange+1; i++)
         {
+            if (targets[i] == null) return;
             targets[i].GetComponent<Target>().AvailableTarget = true;
         }
     }
     protected void TurnOffTargets()
     {
-        targets.Clear();
         foreach(GameObject target in targets)
         {
             target.GetComponent<Target>().AvailableTarget = false;
         }
+        targets.Clear();
     }
 }
 public class Target : TargetSystem
@@ -41,6 +48,7 @@ public class Target : TargetSystem
     private float crit, dmg, chanceDebuff;
     private int acc;
     private string debuff;
+    private GameObject targetSelecting;
     public bool AvailableTarget
     {
         set { availableTarget = value; }
@@ -48,16 +56,17 @@ public class Target : TargetSystem
     private void Start()
     {
         Attacks.Stats += Attack;
+        targetSelecting = GameObject.Find($"RedCharacterLine{gameObject.name}");
+        targetSelecting.SetActive( false );
     }
     private void OnMouseOver()
     {
         if (!availableTarget)return;
-
+        targetSelecting.SetActive( true );
     }
     private void OnMouseExit()
     {
-        if (!availableTarget)return;
-
+        targetSelecting.SetActive(false);
     }
     private void OnMouseDown()
     {
@@ -65,6 +74,7 @@ public class Target : TargetSystem
         Debug.Log(gameObject.name + " selected");
         OnTargetSelected?.Invoke(gameObject,crit,dmg,acc,debuff,chanceDebuff);
         TurnOffTargets();
+        Invoke(nameof(TurnOff), 0.5f);
     }
     private void Attack(float critAttack, float damage, int accuracyAttack, string debuffName, float debuffChance)
     {
@@ -73,5 +83,9 @@ public class Target : TargetSystem
         acc = accuracyAttack;
         debuff = debuffName;
         chanceDebuff = debuffChance;
+    }
+    private void TurnOff()
+    {
+        targetSelecting.SetActive(false);
     }
 }

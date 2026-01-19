@@ -90,14 +90,13 @@ public class BaseUnit : MonoBehaviour
         if (gameObject.CompareTag("Enemy") && deathsdoor)
         {
             corpse = true;
-            currentHp = 10;
+            currentHp = 5;
         }
         Debug.Log(currentHp);
         dead = currentHp < 0;
         if (Dead)
         {   
             OnUnitDeath?.Invoke(caster, null, gameObject);
-            Destroy(gameObject);
         }
         //debuffs
         /*if (debuffName == null) return;
@@ -106,7 +105,7 @@ public class BaseUnit : MonoBehaviour
         Debug.Log(debuffHitChance);
         int debuffCheck = Random.Range(1, 100);
         if (debuffHitChance < debuffCheck) return;*/
-        Debug.Log(debuffName);
+        //Debug.Log(debuffName);
         //apply debuff??
     }  
         

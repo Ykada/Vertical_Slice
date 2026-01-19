@@ -14,18 +14,27 @@ public class AttackStats : MonoBehaviour
     [SerializeField] private List<string> debuffNames;
     [SerializeField] private List<float> debuffChance;
     [SerializeField] private List<int> accuracyAttacks;
+    [SerializeField] private List<Sprite> spriteAttacks;
+    private GameObject playerTurn;
 
     private void Start()
     {
         selectAttack = GameObject.Find("SelectAttack").GetComponent<SelectAttack>();
+        playerTurn = GameObject.Find($"YellowCharacterLine{gameObject.name}");
+        playerTurn.SetActive( false );
         this.enabled = false;
     }
     private void OnEnable()
     {
         if (didStart) SetStats();
     }
+    private void OnDisable()
+    {
+        playerTurn.SetActive( false );
+    }
     private void SetStats()
     {
+        playerTurn.SetActive(true);
         gameObject.GetComponent<BaseUnit>().FirstAction = true; 
         //attack 1
         Attacks temp = selectAttack.Buttons[0].GetComponent<Attacks>();
@@ -36,6 +45,8 @@ public class AttackStats : MonoBehaviour
         temp.DebuffName = debuffNames[0];
         temp.DebuffChance = debuffChance[0];
         temp.AccuracyAttack = accuracyAttacks[0];
+        temp.Sprite = spriteAttacks[0];
+        temp.FirstTime = true;
         //attack 2
         temp = selectAttack.Buttons[1].GetComponent<Attacks>();
         temp.DamageMod = damageMods[1];
@@ -45,6 +56,8 @@ public class AttackStats : MonoBehaviour
         temp.DebuffName = debuffNames[1];
         temp.DebuffChance = debuffChance[1];
         temp.AccuracyAttack = accuracyAttacks[1];
+        temp.Sprite = spriteAttacks[1];
+        temp.FirstTime = true;
         //attack 3
         temp = selectAttack.Buttons[2].GetComponent<Attacks>();
         temp.DamageMod = damageMods[2];
@@ -54,6 +67,8 @@ public class AttackStats : MonoBehaviour
         temp.DebuffName = debuffNames[2];
         temp.DebuffChance = debuffChance[2];
         temp.AccuracyAttack = accuracyAttacks[2];
+        temp.Sprite = spriteAttacks[2];
+        temp.FirstTime = true;
         //attack 4
         temp = selectAttack.Buttons[3].GetComponent<Attacks>();
         temp.DamageMod = damageMods[3];
@@ -63,6 +78,8 @@ public class AttackStats : MonoBehaviour
         temp.DebuffName = debuffNames[3];
         temp.DebuffChance = debuffChance[3];
         temp.AccuracyAttack = accuracyAttacks[3];
+        temp.Sprite = spriteAttacks[3];
+        temp.FirstTime = true;
         OnStatChange?.Invoke();
     }
 }

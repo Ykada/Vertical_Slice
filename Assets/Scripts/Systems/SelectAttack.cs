@@ -43,11 +43,15 @@ public class Attacks : MonoBehaviour
     private float critAttack, damageMod, debuffChance;
     private string debuffName;
     private bool firstTime = true;
-
+    private Sprite sprite;
     private void Start()
     {
         
         AttackStats.OnStatChange += ReadStats;
+    }
+    public Sprite Sprite
+    {
+        set { sprite = value; }
     }
     public float CritAttack
     {
@@ -77,6 +81,10 @@ public class Attacks : MonoBehaviour
     {
         set { endTarget = value; }
     }
+    public bool FirstTime
+    {
+        set { firstTime = value; }
+    }
     private void OnMouseOver()
     {
         //canvas
@@ -94,9 +102,9 @@ public class Attacks : MonoBehaviour
             Heal?.Invoke(critAttack, ((int)damageMod), debuffName);
             return;
         }
-        if (firstTime && startTarget != 0) 
+        if (firstTime) 
         { 
-            AttackSelected?.Invoke(0, endTarget);
+            AttackSelected?.Invoke(0, 0);
         }
         AttackSelected?.Invoke(startTarget, endTarget);
         firstTime = false;
@@ -106,6 +114,7 @@ public class Attacks : MonoBehaviour
     }
     private void ReadStats()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
         Debug.Log($"{gameObject.name} stats: Crit {critAttack}, Debuff {debuffName}:{debuffChance}, Damage {damageMod * 100}, Accuracy {accuracyAttack}, Targets {startTarget} t/m {endTarget}");
     }
 }

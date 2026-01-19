@@ -51,7 +51,6 @@ public class PlacingSystem : MonoBehaviour
         i = 0;
         foreach (Transform t in placesHeroes)
         {
-
             heroPrefabs[i].transform.position = placesHeroes[i].position;
             i++;
             if (i > heroPrefabs.Count - 1) break;
@@ -60,12 +59,12 @@ public class PlacingSystem : MonoBehaviour
     //caster, what way the debuffed need to go, target of change (dead or because of debuff)
     private void OnPositionChange(GameObject sideOfNoChange, string whatWay, GameObject TargetOfChange)
     {
-        if (sideOfNoChange.CompareTag("Enemy"))
+        if (TargetOfChange.CompareTag("Player"))
         {
-            if (!TargetOfChange.activeInHierarchy) 
+            if (TargetOfChange.GetComponent<BaseUnit>().Dead) 
             { 
                 heroPrefabs.Remove(TargetOfChange);
-                heroPrefabs.Sort();
+                Destroy(TargetOfChange);
                 Placing();
                 return;
             }
@@ -83,6 +82,7 @@ public class PlacingSystem : MonoBehaviour
         if (TargetOfChange.GetComponent<BaseUnit>().Dead)
         {
             enemyPrefabs.Remove(TargetOfChange);
+            Destroy(TargetOfChange);
             Placing();
             return;
         }

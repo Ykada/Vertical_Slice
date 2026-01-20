@@ -53,7 +53,7 @@ public class MainMenuUI : MonoBehaviour
         StartGameButten.onClick.AddListener(() =>
         {
             Savedata();
-            SceneManager.LoadScene("Staging Scene"); // Put the scene name here where you want to go
+            SceneManager.LoadScene("Artist test"); // Put the scene name here where you want to go
         });
         loaddata();
     }

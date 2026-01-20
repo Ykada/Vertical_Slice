@@ -34,7 +34,7 @@ public class BaseUnit : MonoBehaviour
     //turn
     private CurrentTurn turnsystem;
     public static event Action<GameObject, string, GameObject> OnUnitDeath;
-    public Slider HpSlider;
+    [SerializeField]private Slider HpSlider;
 
     public bool DealtDamage
     {

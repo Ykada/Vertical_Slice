@@ -33,35 +33,37 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        CampainstartCanvas.SetActive(true);
-        savingCanvas.SetActive(false);
-        savefilepath = Path.Combine(Application.persistentDataPath, "MenuSave.txt");
-        StartButton.onClick.AddListener(() =>
-        {
-            CampainstartCanvas.SetActive(false);
-            savingCanvas.SetActive(true);
-            Backgroundimage.transform.position = new Vector3(1955, 950, 0);
-            othertransforms[0].transform.position = new Vector3(1955, 1050, 0);
-            othertransforms[1].transform.position = new Vector3(1955, 850, 0);
-            othertransforms[2].transform.position = new Vector3(1955, 750, 0);
-            othertransforms[3].transform.position = new Vector3(1955, 850, 0);
-            othertransforms[4].transform.position = new Vector3(1955, 750, 0);
-            othertransforms[5].transform.position = new Vector3(1955, 950, 0);
+        /* CampainstartCanvas.SetActive(true);
+         savingCanvas.SetActive(false);
+         savefilepath = Path.Combine(Application.persistentDataPath, "MenuSave.txt");
+         StartButton.onClick.AddListener(() =>
+         {
+             CampainstartCanvas.SetActive(false);
+             savingCanvas.SetActive(true);
+             Backgroundimage.transform.position = new Vector3(1955, 950, 0);
+             othertransforms[0].transform.position = new Vector3(1955, 1050, 0);
+             othertransforms[1].transform.position = new Vector3(1955, 850, 0);
+             othertransforms[2].transform.position = new Vector3(1955, 750, 0);
+             othertransforms[3].transform.position = new Vector3(1955, 850, 0);
+             othertransforms[4].transform.position = new Vector3(1955, 750, 0);
+             othertransforms[5].transform.position = new Vector3(1955, 950, 0);
 
 
-        });
+         }); */
         StartGameButten.onClick.AddListener(() =>
         {
-            Savedata();
+            //Savedata();
             SceneManager.LoadScene("Artist test"); // Put the scene name here where you want to go
         });
-        loaddata();
+        //loaddata();
     }
     private void Update()
     {
-    }
 
-    private void Savedata()
+    }
+}
+
+ /*   private void Savedata()
     {
         MenuTextSavingData data = new MenuTextSavingData();
         data.SaveGame1 = SaveGametext1.text;
@@ -91,4 +93,4 @@ public class MainMenuUI : MonoBehaviour
         public string SaveGame1;
         public string SaveGame2;
     }
-}
+}*/

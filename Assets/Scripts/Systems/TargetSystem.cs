@@ -15,6 +15,7 @@ public class TargetSystem : MonoBehaviour
     }
     private void GetTargets(int startRange, int endRange)
     {
+        targets.Clear();
         targets.AddRange(gameObject.GetComponent<PlacingSystem>().EnemyPrefabs);
         if (targets[startRange] == null)
         {
@@ -38,7 +39,6 @@ public class TargetSystem : MonoBehaviour
         {
             target.GetComponent<Target>().AvailableTarget = false;
         }
-        targets.Clear();
     }
 }
 public class Target : TargetSystem

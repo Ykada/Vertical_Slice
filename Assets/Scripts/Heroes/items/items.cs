@@ -10,13 +10,11 @@ public class Items : MonoBehaviour
 
     [SerializeField] private GameObject animationbottle;
 
-    [SerializeField] private Text number;
 
 
     void Start()
     {
         animationbottle.SetActive(false);
-        number.gameObject.SetActive(true);
     }
 
     public void UseShovel()
@@ -63,6 +61,5 @@ public class Items : MonoBehaviour
     {
         animationbottle.SetActive(true);
         Debug.Log("holy water used");
-        number.gameObject.SetActive(false);
     }
 }

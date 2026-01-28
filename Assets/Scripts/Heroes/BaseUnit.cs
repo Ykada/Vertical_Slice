@@ -85,7 +85,7 @@ public class BaseUnit : MonoBehaviour
             return;
         }
         //damage - protection
-        currentHp -= (damageEnemy - battleProt);
+        currentHp -= damageEnemy;
         if (currentHp < 0 && !deathsdoor && !corpse) currentHp = 0;
         //bools goedzetten
         deathsdoor = currentHp == 0;
